@@ -3,45 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Coffee & Power BI Portfolio</title>
     <style>
         body {
-            font-family: segoe UI light, sans-serif;
-            text-align: center;
-            background-color: #dbc1ac; /* Set the background color */
-            color: #fff; /* Adjust text color for better contrast */
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #967259; /* Coffee-colored background */
+            color: #fff;
         }
-        h1 {
-            margin-top: 50px;
+        header {
+            background-color: #4b2e2a; /* Dark coffee theme */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            margin: 0;
             font-size: 2.5rem;
-            text-transform: uppercase;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
-        p {
-            font-size: 1.2rem;
-            margin: 20px 0;
+        nav {
+            margin-top: 10px;
         }
-        a {
-            color: #ffda79; /* Gold-ish color for links */
+        nav a {
+            color: #ffda79; /* Golden link color */
             text-decoration: none;
-            font-size: 1.2rem;
-            border: 2px solid #ffda79;
-            padding: 10px 20px;
-            border-radius: 5px;
-            display: inline-block;
-            transition: background-color 0.3s, color 0.3s;
+            margin: 0 15px;
+            font-size: 1.1rem;
         }
-        a:hover {
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-image: url('https://via.placeholder.com/1920x600?text=Coffee+and+Power+BI');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background-color: #4b2e2a;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            text-align: center;
+            color: #fff;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card h3 {
+            margin: 15px 0;
+            font-size: 1.5rem;
+        }
+        .card p {
+            padding: 0 15px;
+            font-size: 1rem;
+        }
+        .card a {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px 20px;
             background-color: #ffda79;
-            color: #967259;
+            color: #4b2e2a;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .card a:hover {
+            background-color: #ffe29a;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4b2e2a;
+            color: #fff;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>See the different Power BI reports below:</p>
-    <a href="projects.html">Explore My Projects</a>
+    <header>
+        <h1>Coffee & Power BI Portfolio</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#reports">Reports</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Where the aroma of coffee meets the power of data visualization.</p>
+    </section>
+
+    <section class="content" id="reports">
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200?text=Report+1" alt="Report 1">
+            <h3>Sales Dashboard</h3>
+            <p>An insightful dashboard showcasing sales trends and performance.</p>
+            <a href="#">View Report</a>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200?text=Report+2" alt="Report 2">
+            <h3>Marketing Analysis</h3>
+            <p>A comprehensive view of marketing strategies and outcomes.</p>
+            <a href="#">View Report</a>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200?text=Report+3" alt="Report 3">
+            <h3>Customer Insights</h3>
+            <p>Deep dive into customer behaviors and preferences.</p>
+            <a href="#">View Report</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Coffee & Power BI Portfolio. All rights reserved.</p>
+    </footer>
 </body>
 </html>
