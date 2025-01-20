@@ -133,6 +133,35 @@
             background-color: #ffda79; /* Highlight on hover */
             color: #4b2e2a;
         }
+        .carousel {
+            display: flex; /* Display images in a horizontal row */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Snap images into view */
+            gap: 10px; /* Add spacing between images */
+            padding: 10px 0; /* Add padding for better spacing */
+            height: 220px; /* Set a fixed height for the carousel */
+        }
+    
+        .carousel img {
+            height: 100%; /* Restrict image height to the carousel height */
+            width: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Add rounded corners */
+            scroll-snap-align: center; /* Ensure each image snaps to center */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+        }
+    
+        .carousel::-webkit-scrollbar {
+            height: 8px; /* Horizontal scrollbar height */
+        }
+    
+        .carousel::-webkit-scrollbar-thumb {
+            background-color: #4b2e2a; /* Color of the scrollbar thumb */
+            border-radius: 10px;
+        }
+    
+        .carousel::-webkit-scrollbar-track {
+            background-color: #967259; /* Background of the scrollbar track */
+        }
     </style>
     <script>
     function scrollLeft() {
