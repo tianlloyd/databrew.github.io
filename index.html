@@ -19,10 +19,19 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
         header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        margin: 0;
+        font-size: 3rem; /* Larger for DataBrew */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        }
+
+        header h1 span {
+        display: block; /* Move 'by Kristian Dimaranan' below */
+        font-size: 1.2rem; /* Smaller font size for the caption */
+        font-weight: normal; /* Normal weight to differentiate from title */
+        text-transform: none; /* Disable uppercase for the caption */
+        margin-top: 5px; /* Add spacing between title and caption */
+        color: #ffda79; /* Optional: Make it golden for visual distinction */
         }
         nav {
             margin-top: 10px;
@@ -122,7 +131,7 @@
 
     <section class="content" id="reports">
         <div class="card">
-            <img src="https://raw.githubusercontent.com/tianlloyd/databrew.github.io/refs/heads/main/HR%20Workforce%20and%20Vacancy/HR%20Workforce.png">
+            <img src="https://raw.githubusercontent.com/tianlloyd/databrew.github.io/main/HR%20Workforce%20and%20Vacancy/HR%20Workforce.png" alt="HR Workforce">
             <h3>HR Workforce and Vacancy Dashboard</h3>
             <p>An insightful dashboard showcasing sales trends and performance.</p>
             <a href="#">View Report</a>
