@@ -101,6 +101,19 @@
         .card a:hover {
             background-color: #ffe29a;
         }
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .dashboard-header h3 {
+            font-size: 1.8rem;
+            margin: 10px 0;
+            color: #fff; /* Title color */
+        } 
+        .dashboard-header p {
+            font-size: 1.2rem;
+            color: #ffda79; /* Description in golden color */
+        }
         footer {
             text-align: center;
             padding: 20px;
@@ -166,12 +179,12 @@
     <script>
     function scrollLeft() {
         const carousel = document.querySelector('.carousel');
-        carousel.scrollBy({ left: -300, behavior: 'smooth' });
+        carousel.scrollBy({ left: -300, behavior: 'smooth' }); // Moves 300px left
     }
 
     function scrollRight() {
         const carousel = document.querySelector('.carousel');
-        carousel.scrollBy({ left: 300, behavior: 'smooth' });
+        carousel.scrollBy({ left: 300, behavior: 'smooth' }); // Moves 300px right
     }
 </script>
 
@@ -196,6 +209,10 @@
     </section>
 
     <section class="content" id="reports">
+        <div class="dashboard-header">
+            <h3>HR Workforce and Vacancy Dashboard</h3>
+            <p>An insightful dashboard showcasing key HR metrics and performance trends.</p>
+        </div>
         <div class="carousel-container">
             <button class="scroll-btn left" onclick="scrollLeft()">&#10094;</button>
         <div class="carousel">
