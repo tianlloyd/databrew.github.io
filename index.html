@@ -5,189 +5,160 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DataBrew</title>
 <style>
-        body {
-                font-family: 'Segoe UI Light', sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #967259; /* Coffee-colored background */
-                color: #fff;
-        }
-        .logo {
-            width: 150px; /* Adjust width as needed */
-            height: auto; /* Maintain aspect ratio */
-            display: block;
-            margin: 0 auto; /* Center the logo */
-        }             
-       header {
-            text-align: center;
-            padding: 20px;
-            background-color: #4b2e2a; /* Keep the coffee theme */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-        header h1 {
-                margin: 0;
-                font-size: 3rem; 
-                text-transform: none;
-                letter-spacing: 2px;
-        }
-         header span {
-            display: block;
-            font-size: 1rem; /* Caption size */
-            font-weight: normal;
-            color: #ffda79;
-            margin-top: 5px;
-        }
-        header h1 span {
-                display: block; /* Move 'by Kristian Dimaranan' below */
-                font-size: 1rem; /* Smaller font size for the caption */
-                font-weight: normal; /* Normal weight to differentiate from title */
-                text-transform: none; /* Disable uppercase for the caption */
-                margin-top: 5px; /* Add spacing between title and caption */
-                color: #ffda79; /* Optional: Make it golden for visual distinction */
-        }
-        nav {
-                margin-top: 15px;
-        }
-        nav a {
-                color: #ffda79; /* Golden link color */
-                text-decoration: none;
-                margin: 0 15px;
-                font-size: 1.2rem;
-        }
-        nav a:hover {
-                text-decoration: underline;
-        }
-        .hero {
-                text-align: center;
-                padding: 50px 20px;
-                background-image: url('https://via.placeholder.com/1920x600?text=Coffee+and+Power+BI');
-                background-size: cover;
-                background-position: center;
-                color: #fff;
-        }
-        .hero h2 {
-                font-size: 2rem;
-                margin-bottom: 10px;
-        }
-        .hero p {
-                font-size: 1.2rem;
-        }
-        .content {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 20px;
-                padding: 20px;
-        }
-        .card {
-                background-color: #4b2e2a;
-                border-radius: 10px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-                overflow: hidden;
-                text-align: center;
-                color: #fff;
-        }
-        .card img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-        }
-        .card h3 {
-                margin: 15px 0;
-                font-size: 1.5rem;
-        }
-        .card p {
-                padding: 0 15px;
-                font-size: 1rem;
-        }
-        .card a {
-                display: inline-block;
-                margin: 15px 0;
-                padding: 10px 20px;
-                background-color: #ffda79;
-                color: #4b2e2a;
-                text-decoration: none;
-                font-weight: bold;
-                border-radius: 5px;
-                transition: background-color 0.3s;
-        }
-        .card a:hover {
-                background-color: #ffe29a;
-        }
-        footer {
-                text-align: center;
-                padding: 20px;
-                background-color: #4b2e2a;
-                color: #fff;
-                margin-top: 20px;
-        }
-        /* Dashboard Section */
-        .dashboard {
-            margin-bottom: 40px; /* Add spacing between dashboards */
-            padding: 20px;
-            background-color: #4b2e2a; /* Optional: Give dashboards a distinct background */
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add depth to each section */
-        }  
-        .dashboard-header {
-            text-align: center;
-            margin-bottom: 20px;
-        } 
-        .dashboard-header h3 {
-            font-size: 2rem;
-            margin: 0;
-            color: #fff; /* Title color */
-        }  
-        .dashboard-header p {
-            font-size: 1.2rem;
-            color: #ffda79; /* Golden color for descriptions */
-            margin: 10px 0 0;
-        }   
-        /* Carousel Section */
-        .carousel-container {
-            position: relative;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 1200px; /* Restrict carousel width for larger screens */
-            overflow: hidden;
-        }   
-        .carousel {
-            display: flex; /* Horizontal layout */
-            overflow-x: auto; /* Enable horizontal scrolling */
-            scroll-snap-type: x mandatory; /* Snap scrolling */
-            gap: 10px;
-            padding: 10px 0;
-            height: 300px; /* Increase carousel height */
-        }  
-        .carousel img {
-            height: 100%;
-            width: auto; /* Maintain aspect ratio */
-            border-radius: 10px;
-            scroll-snap-align: center; /* Snap images to center */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
-        }
+/* General Body Styling */
+body {
+    font-family: 'Segoe UI Light', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c8a383; /* Light coffee background for contrast */
+    color: #fff;
+}
+
+/* Header Styling */
+header {
+    background-color: #4b2e2a; /* Dark coffee header */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header .logo {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+header span {
+    display: block;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #ffda79;
+    margin-top: 5px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #ffda79; /* Golden link color */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-image: url('https://via.placeholder.com/1920x600?text=Coffee+and+Power+BI');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Dashboard Section */
+.dashboard {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #5c3a31; /* Slightly darker coffee background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add depth */
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-header h3 {
+    font-size: 2rem;
+    margin: 0;
+    color: #fff;
+}
+
+.dashboard-header p {
+    font-size: 1.2rem;
+    color: #ffda79;
+    margin: 10px 0 0;
+}
+
+/* Carousel Section */
+.carousel-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding: 10px 0;
+    height: 300px;
+}
+
+.carousel img {
+    height: 100%;
+    width: auto;
+    border-radius: 10px;
+    scroll-snap-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
 /* Scroll Buttons */
-        .scroll-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(75, 46, 42, 0.8); /* Semi-transparent button */
-            border: none;
-            color: white;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 50%;
-            z-index: 1;
-        }  
-        .scroll-btn.left {
-            left: -20px; /* Move outside carousel */
-        } 
-        .scroll-btn.right {
-            right: -20px; /* Move outside carousel */
-        }
-        .scroll-btn:hover {
-            background-color: #ffda79; /* Highlight on hover */
-            color: #4b2e2a;
-        }
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(75, 46, 42, 0.8); /* Semi-transparent button */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.scroll-btn.left {
+    left: -20px;
+}
+
+.scroll-btn.right {
+    right: -20px;
+}
+
+.scroll-btn:hover {
+    background-color: #ffda79;
+    color: #4b2e2a;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4b2e2a;
+    color: #fff;
+    margin-top: 20px;
+}
+
 </style>
 <script>
 function scrollLeft() {
