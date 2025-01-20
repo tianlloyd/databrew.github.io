@@ -108,7 +108,44 @@
             color: #fff;
             margin-top: 20px;
         }
+        .carousel-container {
+            position: relative;
+        }
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(75, 46, 42, 0.8); /* Semi-transparent button */
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .scroll-btn.left {
+            left: 10px;
+        }
+        .scroll-btn.right {
+            right: 10px;
+        }
+        .scroll-btn:hover {
+            background-color: #ffda79; /* Highlight on hover */
+            color: #4b2e2a;
+        }
     </style>
+    <script>
+    function scrollLeft() {
+        const carousel = document.querySelector('.carousel');
+        carousel.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+
+    function scrollRight() {
+        const carousel = document.querySelector('.carousel');
+        carousel.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+</script>
+
 </head>
 <body>
     <header>
@@ -130,11 +167,14 @@
     </section>
 
     <section class="content" id="reports">
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/tianlloyd/databrew.github.io/main/HR%20Workforce%20and%20Vacancy/HR%20Workforce.png" alt="HR Workforce">
-            <h3>HR Workforce and Vacancy Dashboard</h3>
-            <p>An insightful dashboard showcasing sales trends and performance.</p>
-            <a href="#">View Report</a>
+        <div class="carousel-container">
+            <button class="scroll-btn left" onclick="scrollLeft()">&#10094;</button>
+        <div class="carousel">
+            <img src="photo1.png" alt="Photo 1">
+            <img src="photo2.png" alt="Photo 2">
+            <img src="photo3.png" alt="Photo 3">
+        </div>
+            <button class="scroll-btn right" onclick="scrollRight()">&#10095;</button>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/300x200?text=Report+2" alt="Report 2">
