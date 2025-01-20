@@ -12,11 +12,17 @@
                 background-color: #967259; /* Coffee-colored background */
                 color: #fff;
         }
-        header {
-                background-color: #4b2e2a; /* Dark coffee theme */
-                padding: 20px;
-                text-align: center;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        .logo {
+            width: 150px; /* Adjust width as needed */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            margin: 0 auto; /* Center the logo */
+        }             
+       header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4b2e2a; /* Keep the coffee theme */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
         header h1 {
                 margin: 0;
@@ -24,7 +30,13 @@
                 text-transform: none;
                 letter-spacing: 2px;
         }
-        
+         header span {
+            display: block;
+            font-size: 1rem; /* Caption size */
+            font-weight: normal;
+            color: #ffda79;
+            margin-top: 5px;
+        }
         header h1 span {
                 display: block; /* Move 'by Kristian Dimaranan' below */
                 font-size: 1rem; /* Smaller font size for the caption */
@@ -192,16 +204,16 @@ carousel.scrollBy({ left: 300, behavior: 'smooth' });
 </head>
 <body>
 <header>
-<h1>
-DataBrew
-<span>by Kristian Dimaranan</span>
-</h1>
-<nav>
-<a href="#about">About</a>
-<a href="#reports">Reports</a>
-<a href="#contact">Contact</a>
-</nav>
+<header>
+    <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/DataBrewLogo.png" alt="DataBrew Logo" class="logo">
+    <span>by Kristian Dimaranan</span>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#reports">Reports</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
+
 
 
 <section class="hero">
