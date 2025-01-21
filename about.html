@@ -61,7 +61,70 @@
             color: #fff;
             margin-top: 40px;
         }
+        .carousel-container {
+            position: relative;
+            margin: 40px auto; /* Center carousel */
+            width: 100%;
+            max-width: 800px; /* Limit the maximum width */
+            overflow: hidden;
+        }
+        
+        .carousel {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Snap scrolling */
+            gap: 10px;
+            padding: 10px 0;
+            height: 300px; /* Set a fixed height */
+        }
+        
+        .carousel img {
+            height: 100%; /* Ensure images fit carousel height */
+            width: auto; /* Maintain aspect ratio */
+            border-radius: 10px;
+            scroll-snap-align: center; /* Snap images into view */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+        }
+        
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(75, 46, 42, 0.8); /* Semi-transparent button */
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .scroll-btn.left {
+            left: 10px;
+        }
+        
+        .scroll-btn.right {
+            right: 10px;
+        }
+        
+        .scroll-btn:hover {
+            background-color: #ffda79; /* Highlight button on hover */
+            color: #4b2e2a;
+        }
+
     </style>
+    <script>
+    function scrollLeft(carouselId) {
+        const carousel = document.getElementById(carouselId);
+        carousel.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+
+    function scrollRight(carouselId) {
+        const carousel = document.getElementById(carouselId);
+        carousel.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+</script>
+
 </head>
 <body>
     <header>
@@ -91,6 +154,25 @@
         <p>
             Feel free to explore my work or reach out if you'd like to collaborate!
         </p>
+          <!-- Carousel Section -->
+        <div class="carousel-container">
+            <button class="scroll-btn left" onclick="scrollLeft('about-carousel')">&#10094;</button>
+            <div class="carousel" id="about-carousel">
+                <div>
+                    <img src="https://via.placeholder.com/400x300?text=Profile+Photo+1" alt="Photo 1">
+                    <p>Caption for Photo 1</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/400x300?text=Profile+Photo+2" alt="Photo 2">
+                    <p>Caption for Photo 2</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/400x300?text=Profile+Photo+3" alt="Photo 3">
+                    <p>Caption for Photo 3</p>
+                </div>
+            </div>
+            <button class="scroll-btn right" onclick="scrollRight('about-carousel')">&#10095;</button>
+        </div>
     </main>
 
     <footer>
