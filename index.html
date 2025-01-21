@@ -15,31 +15,36 @@ body {
 }
 
 /* Header Styling */
+/* Shared Header Styles */
 header {
     background-color: #4b2e2a; /* Dark coffee header */
-    padding: 5px;
+    padding: 5px 20px 10px; /* Unified padding (top, sides, bottom) */
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    padding-bottom: 10px;
 }
 
 header .logo {
     width: 250px;
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto; /* Center the logo */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Unified font size for title */
 }
 
 header span {
     display: block;
     font-size: 1rem;
     font-weight: normal;
-    color: #ffda79;
+    color: #ffda79; /* Golden caption color */
     margin-top: 5px;
 }
 
 nav {
-    margin-top: 20px;
+    margin-top: 20px; /* Consistent spacing between nav and caption */
 }
 
 nav a {
@@ -50,7 +55,7 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Add underline on hover */
 }
 
 /* Hero Section */
