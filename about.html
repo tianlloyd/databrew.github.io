@@ -86,6 +86,22 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
         }
         
+        .carousel div {
+            text-align: center;
+            height: 100%; /* Ensure the container takes full carousel height */
+            flex-shrink: 0; /* Prevent shrinking */
+            display: flex; /* Align image and caption vertically */
+            flex-direction: column;
+            justify-content: flex-start; /* Align items at the top */
+        }
+       
+        .carousel p {
+            margin-top: 10px;
+            font-size: 1rem; /* Ensure the font size is consistent */
+            color: #ffda79; /* Golden caption text */
+            font-style: italic; /* Optional styling */
+        }
+        
         .scroll-btn {
             position: absolute;
             top: 50%;
