@@ -58,20 +58,60 @@
         no {
         margin-top: 15px;
         }
+        
         main {
             padding: 40px 20px;
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
+            text-align: left; /* Align text to the left for professionalism */
         }
+        
         main h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
+            color: #ffda79; /* Golden color for the heading */
+            text-align: center; /* Center the heading */
             margin-bottom: 20px;
         }
+        
         main p {
             font-size: 1.2rem;
-            line-height: 1.6;
+            line-height: 1.8; /* Add breathing space between lines */
+            margin-bottom: 20px; /* Space between paragraphs */
         }
+        
+        main ul {
+            list-style-type: disc;
+            margin-left: 40px; /* Indent the list */
+            line-height: 1.8;
+        }
+        
+        main li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        main .highlight {
+            font-weight: bold; /* Bold for emphasis */
+            color: #ffda79; /* Golden highlight for key terms */
+        }
+        
+        main .career-highlights h3 {
+            font-size: 1.8rem;
+            color: #ffda79;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        main a.link {
+            color: #ffda79; /* Golden color for the link */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        main a.link:hover {
+            text-decoration: underline;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -174,60 +214,58 @@
     </header>
 
     <main>
-        <h2>About Me</h2>
-        <p>
-            Hello! I'm Kristian Dimaranan, a passionate data analyst, business analyst, and visualization expert with over a decade of experience turning complex data into actionable insights. 
-        </p>
-        <p>
-            DataBrew is my portfolio, where I combine my love for data and coffee to showcase impactful Power BI dashboards and transformative solutions for businesses
-        </p>
-        <p>
-            Throughout my career, I’ve not only created data-driven insights but also led transformative projects that have reshaped business processes and improved operational efficiency:
-        </p>   
-        <p>
-            ● As Head of Data Management & Analytics at Aldar, I partnered with senior stakeholders to design and deliver over 50 dashboards, aligning data solutions with business strategy and KPIs while streamlining reporting processes.
-        </p>
-        <p>
-            ● As the Solution Architect for HCM systems, I spearheaded the transformation of HR systems by automating over 90% of manual processes, leading multi-million-dollar Oracle implementation projects, and utilizing analytics to drive workforce improvement programs 
-        </p> 
-        <p> 
-            ● As the IT Global Service Operations Section Head at Onsemi, I led a team of 11 to manage IT operations across manufacturing sites in APAC, the US, and Europe. I established governance frameworks, enhanced service delivery through Lean Six Sigma methodologies, and ensured 99.89% system uptime, supporting critical manufacturing operations globally
-        </p>
-           <!-- Notes: want to help you get that first step and realize the power of data
-            There are better, more efficient ways of managing your reports
-            Add brief history of employment -->
-        <p>
-            I specialize in bridging the gap between technical solutions and business needs—translating complex requirements into scalable, automated systems that drive efficiency, improve user adoption, and deliver meaningful results. 
-            Whether transforming processes, integrating systems post-acquisition, or creating engaging dashboards, my goal is to empower organizations to unlock their full potential through data and innovation.
-        </p>
-        <p>
-            Welcome to DataBrew—where insights are brewed to perfection and business transformation takes center stage.
-            Feel free to explore my work or reach out if you'd like to collaborate!
-        </p>
-          <!-- Carousel Section -->
-        <div class="carousel-container">
-            <button class="scroll-btn left" onclick="scrollLeft('about-carousel')">&#10094;</button>
-            <div class="carousel" id="about-carousel">
-                <div>  
-                    <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1709361030707.jpg?raw=true" alt="Photo 1">
-                    <p>Research paper publication - Artifical Intelligence in the Workplace</p>
-                </div>
-                <div>
-                    <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1726290213196.jpg?raw=true" alt="Photo 2">
-                    <p>Finalist presenting for Tech and Innovation Program - Artifical Intelligence at Aldar</p>
-                </div>
-                <div>
-                    <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1614701415114.jpg?raw=true" alt="Photo 3">
-                    <p>Best Technical Paper and Best Presenter Award for 28th ASEMEP National Technical Symposium</p>
-                </div>
-                <div>
-                    <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1726290217795.jpg?raw=true" alt="Photo 4">
-                    <p>Overall winner - Ibtikar Tech and Innovation Program for 2024.</p>
-                </div>
-            </div>
-            <button class="scroll-btn right" onclick="scrollRight('about-carousel')">&#10095;</button>
-        </div>
-    </main>
+    <!-- About Me Heading -->
+    <h2>About Me</h2>
+
+    <!-- Introduction -->
+    <p>
+        Hello! I'm <span class="highlight">Kristian Dimaranan</span>, a passionate data analyst, business analyst, 
+        and visualization expert with over a decade of experience turning complex data into actionable insights.
+    </p>
+
+    <!-- DataBrew Introduction -->
+    <p>
+        <span class="highlight">DataBrew</span> is my portfolio, where I combine my love for data and coffee to showcase 
+        impactful <span class="highlight">Power BI dashboards</span> and transformative solutions for businesses.
+    </p>
+
+    <!-- Career Highlights -->
+    <section class="career-highlights">
+        <h3>Career Highlights</h3>
+        <ul>
+            <li>
+                <strong>Head of Data Management & Analytics at Aldar:</strong> Partnered with senior stakeholders to 
+                design and deliver over 50 dashboards, aligning data solutions with business strategy and KPIs while 
+                streamlining reporting processes.
+            </li>
+            <li>
+                <strong>Solution Architect for HCM Systems:</strong> Spearheaded the transformation of HR systems by automating 
+                over 90% of manual processes, leading multi-million-dollar Oracle implementation projects, and utilizing analytics 
+                to drive workforce improvement programs.
+            </li>
+            <li>
+                <strong>IT Global Service Operations Section Head at Onsemi:</strong> Led a team of 11 to manage IT operations across 
+                manufacturing sites in APAC, the US, and Europe. Established governance frameworks, enhanced service delivery 
+                through Lean Six Sigma methodologies, and ensured 99.89% system uptime, supporting critical manufacturing operations globally.
+            </li>
+        </ul>
+    </section>
+
+    <!-- Specialization -->
+    <p>
+        I specialize in bridging the gap between <span class="highlight">technical solutions</span> and 
+        <span class="highlight">business needs</span>—translating complex requirements into scalable, automated 
+        systems that drive efficiency, improve user adoption, and deliver meaningful results.
+    </p>
+
+    <!-- Closing -->
+    <p>
+        Welcome to <span class="highlight">DataBrew</span>—where insights are brewed to perfection, and business 
+        transformation takes center stage. Feel free to explore my work or <a href="#contact" class="link">reach out</a> 
+        if you'd like to collaborate!
+    </p>
+</main>
+
 
     <footer>
         <p>&copy; 2025 DataBrew. All rights reserved.</p>
