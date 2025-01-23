@@ -199,7 +199,23 @@ carousel.scrollBy({ left: 300, behavior: 'smooth' });
 </section>
 
 <section class="content" id="reports">
-    <!-- First Dashboard -->
+    <!-- 1st Dashboard -->
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <h3>Salary and Budget Dashboard</h3>
+            <p>A comprehensive view of marketing strategies and outcomes.</p>
+        </div>
+        <div class="carousel-container">
+            <button class="scroll-btn left" onclick="scrollLeft('carousel-3')">&#10094;</button>
+            <div class="carousel" id="carousel-3">
+                <img src="https://via.placeholder.com/800x300?text=Budget+Photo+1" alt="Budget Photo 1">
+                <img src="https://via.placeholder.com/800x300?text=Budget+Photo+2" alt="Budget Photo 2">
+                <img src="https://via.placeholder.com/800x300?text=Budget+Photo+3" alt="Budget Photo 3">
+            </div>
+            <button class="scroll-btn right" onclick="scrollRight('carousel-3')">&#10095;</button>
+        </div>
+    </div>
+    <!-- 2nd Dashboard -->
     <div class="dashboard">
         <div class="dashboard-header">
             <h3>HR Workforce and Vacancy Dashboard</h3>
@@ -216,7 +232,7 @@ carousel.scrollBy({ left: 300, behavior: 'smooth' });
         </div>
     </div>
 
-    <!-- Second Dashboard -->
+    <!-- 3rd Dashboard -->
     <div class="dashboard">
         <div class="dashboard-header">
             <h3>Improvement Plan Dashboard</h3>
@@ -230,23 +246,6 @@ carousel.scrollBy({ left: 300, behavior: 'smooth' });
                 <img src="https://via.placeholder.com/800x300?text=Plan+Photo+3" alt="Plan Photo 3">
             </div>
             <button class="scroll-btn right" onclick="scrollRight('carousel-2')">&#10095;</button>
-        </div>
-    </div>
-
-    <!-- Third Dashboard -->
-    <div class="dashboard">
-        <div class="dashboard-header">
-            <h3>Salary and Budget Dashboard</h3>
-            <p>A comprehensive view of marketing strategies and outcomes.</p>
-        </div>
-        <div class="carousel-container">
-            <button class="scroll-btn left" onclick="scrollLeft('carousel-3')">&#10094;</button>
-            <div class="carousel" id="carousel-3">
-                <img src="https://via.placeholder.com/800x300?text=Budget+Photo+1" alt="Budget Photo 1">
-                <img src="https://via.placeholder.com/800x300?text=Budget+Photo+2" alt="Budget Photo 2">
-                <img src="https://via.placeholder.com/800x300?text=Budget+Photo+3" alt="Budget Photo 3">
-            </div>
-            <button class="scroll-btn right" onclick="scrollRight('carousel-3')">&#10095;</button>
         </div>
     </div>
 </section>
