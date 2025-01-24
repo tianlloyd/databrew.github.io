@@ -109,12 +109,11 @@ nav a:hover {
 
 .carousel {
     display: flex;
-    overflow-x: scroll; /* Enable horizontal scrolling */
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 20px; /* Increased gap between images */
     padding: 20px 0;
     height: 100%; /* Make the carousel fill the container height */
-    scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
 .carousel img {
@@ -166,8 +165,7 @@ footer {
 function scrollLeft(carouselId) {
     const carousel = document.getElementById(carouselId);
     if (carousel) {
-        const scrollAmount = carousel.offsetWidth; // Scroll by the width of the carousel container
-        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        carousel.scrollBy({ left: -300, behavior: 'smooth' });
     }
 }
 
@@ -175,8 +173,7 @@ function scrollLeft(carouselId) {
 function scrollRight(carouselId) {
     const carousel = document.getElementById(carouselId);
     if (carousel) {
-        const scrollAmount = carousel.offsetWidth; // Scroll by the width of the carousel container
-        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        carousel.scrollBy({ left: 300, behavior: 'smooth' });
     }
 }
 </script>
@@ -214,8 +211,39 @@ function scrollRight(carouselId) {
         </div>
     </div>
 
-    <!-- Additional dashboards... -->
+    <!-- Dashboard 2 -->
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <h3>HR Workforce and Vacancy Dashboard</h3>
+            <p>An insightful dashboard showcasing key HR metrics and performance trends.</p>
+        </div>
+        <div class="carousel-container">
+            <button class="scroll-btn left" onclick="scrollLeft('dashboard-carousel-2')">&#10094;</button>
+            <div class="carousel" id="dashboard-carousel-2">
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/HR%20Workforce%20and%20Vacancy/HR%20WF%20Home%20Page.png?raw=true" alt="Photo 1">
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/HR%20Workforce%20and%20Vacancy/HR%20Workforce.png?raw=true" alt="Photo 2">
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/HR%20Workforce%20and%20Vacancy/Vacancy%20Report.png?raw=true" alt="Photo 3">
+            </div>
+            <button class="scroll-btn right" onclick="scrollRight('dashboard-carousel-2')">&#10095;</button>
+        </div>
+    </div>
 
+    <!-- Dashboard 3 -->
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <h3>Improvement Plan Dashboard</h3>
+            <p>Deep dive into customer behaviors and preferences.</p>
+        </div>
+        <div class="carousel-container">
+            <button class="scroll-btn left" onclick="scrollLeft('dashboard-carousel-3')">&#10094;</button>
+            <div class="carousel" id="dashboard-carousel-3">
+                <img src="https://via.placeholder.com/800x300?text=Plan+Photo+1" alt="Plan Photo 1">
+                <img src="https://via.placeholder.com/800x300?text=Plan+Photo+2" alt="Plan Photo 2">
+                <img src="https://via.placeholder.com/800x300?text=Plan+Photo+3" alt="Plan Photo 3">
+            </div>
+            <button class="scroll-btn right" onclick="scrollRight('dashboard-carousel-3')">&#10095;</button>
+        </div>
+    </div>
 </section>
 
 <footer>
