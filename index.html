@@ -110,24 +110,26 @@ nav a:hover {
     width: 100%;
     max-width: 1200px;
     overflow: hidden;
+    height: 500px; /* Set the overall height of the carousel section */
 }
 
 .carousel {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 10px;
-    padding: 10px 0;
-    height: 300px;
+    gap: 20px; /* Increased gap between images */
+    padding: 20px 0;
+    height: 100%; /* Make the carousel fill the container height */
 }
 
 .carousel img {
-    height: 100%;
-    width: auto;
+    height: 100%; /* Ensure images fill the carousel height */
+    width: auto; /* Maintain the aspect ratio */
     border-radius: 10px;
-    scroll-snap-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    scroll-snap-align: center; /* Snap images to the center */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
 }
+
 
 /* Scroll Buttons */
 .scroll-btn {
