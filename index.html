@@ -169,15 +169,22 @@ footer {
 
 </style>
 <script>
-function scrollLeft() {
-const carousel = document.querySelector('.carousel');
-carousel.scrollBy({ left: -300, behavior: 'smooth' });
-}
+function scrollLeft(carouselId) {
+        const carousel = document.getElementById(carouselId);
+        carousel.scrollBy({
+            left: -300, // Adjust the scroll amount
+            behavior: 'smooth' // Smooth scrolling
+        });
+    }
 
-function scrollRight() {
-const carousel = document.querySelector('.carousel');
-carousel.scrollBy({ left: 300, behavior: 'smooth' });
-}
+    // Function to scroll right
+    function scrollRight(carouselId) {
+        const carousel = document.getElementById(carouselId);
+        carousel.scrollBy({
+            left: 300, // Adjust the scroll amount
+            behavior: 'smooth' // Smooth scrolling
+        });
+    }
 </script>
 
 </head>
@@ -208,8 +215,8 @@ carousel.scrollBy({ left: 300, behavior: 'smooth' });
             <p>A comprehensive view of marketing strategies and outcomes.</p>
         </div>
         <div class="carousel-container">
-            <button class="scroll-btn left" onclick="scrollLeft('carousel-3')">&#10094;</button>
-            <div class="carousel" id="carousel-3">
+            <button class="scroll-btn left" onclick="scrollLeft('dashboard-carousel')"></button>
+            <div class="carousel" id="dashboard-carousel">
                 <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Salary%20and%20Benefits/Bonus%20Distribution.png?raw=true" alt="Budget Photo 1">
                 <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Salary%20and%20Benefits/Salary%20&%20Budget.png?raw=true" alt="Budget Photo 2">
                 <!-- <img src="https://via.placeholder.com/800x300?text=Budget+Photo+3" alt="Budget Photo 3"> -->
@@ -224,8 +231,8 @@ carousel.scrollBy({ left: 300, behavior: 'smooth' });
             <p>An insightful dashboard showcasing key HR metrics and performance trends.</p>
         </div>
         <div class="carousel-container">
-            <button class="scroll-btn left" onclick="scrollLeft('carousel-1')">&#10094;</button>
-            <div class="carousel" id="carousel-1">
+           <button class="scroll-btn left" onclick="scrollLeft('dashboard-carousel')"></button>
+            <div class="carousel" id="dashboard-carousel">
                 <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/HR%20Workforce%20and%20Vacancy/HR%20WF%20Home%20Page.png?raw=true" alt="Photo 1">
                 <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/HR%20Workforce%20and%20Vacancy/HR%20Workforce.png?raw=true" alt="Photo 2">
                 <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/HR%20Workforce%20and%20Vacancy/Vacancy%20Report.png?raw=true" alt="Photo 3">
@@ -241,8 +248,8 @@ carousel.scrollBy({ left: 300, behavior: 'smooth' });
             <p>Deep dive into customer behaviors and preferences.</p>
         </div>
         <div class="carousel-container">
-            <button class="scroll-btn left" onclick="scrollLeft('carousel-2')">&#10094;</button>
-            <div class="carousel" id="carousel-2">
+            <button class="scroll-btn left" onclick="scrollLeft('dashboard-carousel')"></button>
+            <div class="carousel" id="dashboard-carousel">
                 <img src="https://via.placeholder.com/800x300?text=Plan+Photo+1" alt="Plan Photo 1">
                 <img src="https://via.placeholder.com/800x300?text=Plan+Photo+2" alt="Plan Photo 2">
                 <img src="https://via.placeholder.com/800x300?text=Plan+Photo+3" alt="Plan Photo 3">
