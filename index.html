@@ -53,9 +53,10 @@ nav a:hover {
 }
 .hero h2,
 .hero p {
-    text-align: center; /* Center the text */
-    margin: 0 auto; /* Ensure it's centrally aligned */
-    max-width: 1200px; /* Optional: Limit the width for better readability */
+     text-align: center; /* Ensure both are centered */
+    margin: 10px auto; /* Add vertical spacing */
+    padding: 0; /* Reset any padding */
+    max-width: 1200px; /* Optional: Restrict width for better alignment */
 }
 /* Dashboard Section */
 .dashboard {
@@ -96,7 +97,11 @@ nav a:hover {
 
 .carousel {
     display: flex;
-    gap: 20px; /* Space between items */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px 0;
+    height: 100%;
     transition: transform 0.5s ease; /* Smooth sliding effect */
 }
 
@@ -106,6 +111,8 @@ nav a:hover {
     width: auto; /* Maintain aspect ratio */
     border-radius: 0; /* Remove rounding */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional: Keep shadow */
+    scroll-snap-align: center; /* Snap to the center of the visible area */
+    flex-shrink: 0; /* Prevent shrinking of images */
 }
 
 
@@ -154,28 +161,25 @@ document.addEventListener("DOMContentLoaded", () => {
         const leftButton = carouselContainer.querySelector(".scroll-btn.left");
         const rightButton = carouselContainer.querySelector(".scroll-btn.right");
 
-        let currentIndex = 0;
+        // Function to update scroll position for snapping
+        function scrollCarousel(amount) {
+            const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
 
-        // Function to update carousel position
-        function updateCarousel() {
-            const scrollAmount = carousel.offsetWidth + 20; // Include gap between items
-            carousel.style.transform = `translateX(-${currentIndex * scrollAmount}px)`;
+            // Calculate new scroll position
+            const newScrollLeft = Math.min(
+                Math.max(carousel.scrollLeft + amount, 0),
+                maxScrollLeft
+            );
+
+            carousel.scrollTo({
+                left: newScrollLeft,
+                behavior: "smooth",
+            });
         }
 
-        // Add event listeners to buttons
-        leftButton.addEventListener("click", () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
-
-        rightButton.addEventListener("click", () => {
-            if (currentIndex < carousel.children.length - 1) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
+        // Event listeners for scroll buttons
+        leftButton.addEventListener("click", () => scrollCarousel(-carousel.clientWidth));
+        rightButton.addEventListener("click", () => scrollCarousel(carousel.clientWidth));
     });
 });
 </script>
