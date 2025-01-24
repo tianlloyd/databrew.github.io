@@ -187,16 +187,39 @@
         }
 
     </style>
-    <script>
-    function scrollLeft(carouselId) {
-        const carousel = document.getElementById(carouselId);
-        carousel.scrollBy({ left: -300, behavior: 'smooth' });
-    }
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const carousels = document.querySelectorAll(".carousel-container");
 
-    function scrollRight(carouselId) {
-        const carousel = document.getElementById(carouselId);
-        carousel.scrollBy({ left: 300, behavior: 'smooth' });
-    }
+    carousels.forEach((carouselContainer) => {
+        const carousel = carouselContainer.querySelector(".carousel");
+        const leftButton = carouselContainer.querySelector(".scroll-btn.left");
+        const rightButton = carouselContainer.querySelector(".scroll-btn.right");
+
+        let scrollAmount = carousel.offsetWidth; // Dynamically calculate scroll width
+
+        // Update scroll amount on resize for responsiveness
+        window.addEventListener("resize", () => {
+            scrollAmount = carousel.offsetWidth;
+        });
+
+        // Scroll left function
+        leftButton.addEventListener("click", () => {
+            carousel.scrollBy({
+                left: -scrollAmount,
+                behavior: "smooth",
+            });
+        });
+
+        // Scroll right function
+        rightButton.addEventListener("click", () => {
+            carousel.scrollBy({
+                left: scrollAmount,
+                behavior: "smooth",
+            });
+        });
+    });
+});
 </script>
 
 </head>
@@ -265,28 +288,41 @@
         if you'd like to collaborate!
     </p>
     <!-- Carousel Section -->
-        <div class="carousel-container">
-            <button class="scroll-btn left" onclick="scrollLeft('about-carousel')">&#10094;</button>
-            <div class="carousel" id="about-carousel">
-                <div>  
-                    <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1709361030707.jpg?raw=true" alt="Photo 1">
-                    <p>Research paper publication - Artifical Intelligence in the Workplace</p>
-                </div>
-                <div>
-                    <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1726290213196.jpg?raw=true" alt="Photo 2">
-                    <p>Finalist presenting for Tech and Innovation Program - Artifical Intelligence at Aldar</p>
-                </div>
-                <div>
-                    <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1614701415114.jpg?raw=true" alt="Photo 3">
-                    <p>Best Technical Paper and Best Presenter Award for 28th ASEMEP National Technical Symposium</p>
-                </div>
-                <div>
-                    <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1726290217795.jpg?raw=true" alt="Photo 4">
-                    <p>Overall winner - Ibtikar Tech and Innovation Program for 2024.</p>
-                </div>
-            </div>
-            <button class="scroll-btn right" onclick="scrollRight('about-carousel')">&#10095;</button>
+<div class="carousel-container">
+    <!-- Left Scroll Button -->
+    <button class="scroll-btn left" onclick="scrollLeft('about-carousel')">&#10094;</button>
+    
+    <!-- Carousel Wrapper -->
+    <div class="carousel" id="about-carousel">
+        <!-- First Item -->
+        <div>  
+            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1709361030707.jpg?raw=true" alt="Photo 1">
+            <p>Research paper publication - Artificial Intelligence in the Workplace</p>
         </div>
+        
+        <!-- Second Item -->
+        <div>
+            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1726290213196.jpg?raw=true" alt="Photo 2">
+            <p>Finalist presenting for Tech and Innovation Program - Artificial Intelligence at Aldar</p>
+        </div>
+        
+        <!-- Third Item -->
+        <div>
+            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1614701415114.jpg?raw=true" alt="Photo 3">
+            <p>Best Technical Paper and Best Presenter Award for 28th ASEMEP National Technical Symposium</p>
+        </div>
+        
+        <!-- Fourth Item -->
+        <div>
+            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1726290217795.jpg?raw=true" alt="Photo 4">
+            <p>Overall winner - Ibtikar Tech and Innovation Program for 2024.</p>
+        </div>
+    </div>
+    
+    <!-- Right Scroll Button -->
+    <button class="scroll-btn right" onclick="scrollRight('about-carousel')">&#10095;</button>
+</div>
+
 </main>
     <footer>
         <p>&copy; 2025 DataBrew. All rights reserved.</p>
