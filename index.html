@@ -52,25 +52,6 @@ nav a:hover {
     text-decoration: underline; /* Add underline on hover */
 }
 
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-    background-image: url('https://via.placeholder.com/1920x600?text=Coffee+and+Power+BI');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-}
-
-.hero h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-}
-
 /* Dashboard Section */
 .dashboard {
     margin-bottom: 40px;
@@ -109,18 +90,14 @@ nav a:hover {
 
 .carousel {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px; /* Increased gap between images */
-    padding: 20px 0;
-    height: 100%; /* Make the carousel fill the container height */
+    gap: 20px; /* Space between items */
+    transition: transform 0.5s ease; /* Smooth sliding effect */
 }
 
 .carousel img {
     height: 100%; /* Ensure images fill the carousel height */
-    width: auto; /* Maintain the aspect ratio */
+    width: auto; /* Maintain aspect ratio */
     border-radius: 10px;
-    scroll-snap-align: center; /* Snap images to the center */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
 }
 
@@ -161,21 +138,38 @@ footer {
 }
 </style>
 <script>
-// Function to scroll left
-function scrollLeft(carouselId) {
-    const carousel = document.getElementById(carouselId);
-    if (carousel) {
-        carousel.scrollBy({ left: -300, behavior: 'smooth' });
-    }
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const carousels = document.querySelectorAll(".carousel-container");
 
-// Function to scroll right
-function scrollRight(carouselId) {
-    const carousel = document.getElementById(carouselId);
-    if (carousel) {
-        carousel.scrollBy({ left: 300, behavior: 'smooth' });
-    }
-}
+    carousels.forEach((carouselContainer) => {
+        const carousel = carouselContainer.querySelector(".carousel");
+        const leftButton = carouselContainer.querySelector(".scroll-btn.left");
+        const rightButton = carouselContainer.querySelector(".scroll-btn.right");
+
+        let currentIndex = 0;
+
+        // Function to update carousel position
+        function updateCarousel() {
+            const scrollAmount = carousel.offsetWidth + 20; // Include gap between items
+            carousel.style.transform = `translateX(-${currentIndex * scrollAmount}px)`;
+        }
+
+        // Add event listeners to buttons
+        leftButton.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        rightButton.addEventListener("click", () => {
+            if (currentIndex < carousel.children.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+    });
+});
 </script>
 </head>
 <body>
@@ -202,12 +196,12 @@ function scrollRight(carouselId) {
             <p>A comprehensive view of marketing strategies and outcomes.</p>
         </div>
         <div class="carousel-container">
-            <button class="scroll-btn left" onclick="scrollLeft('dashboard-carousel-1')">&#10094;</button>
-            <div class="carousel" id="dashboard-carousel-1">
+            <button class="scroll-btn left">&#10094;</button>
+            <div class="carousel">
                 <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Salary%20and%20Benefits/Bonus%20Distribution.png?raw=true" alt="Budget Photo 1">
                 <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Salary%20and%20Benefits/Salary%20&%20Budget.png?raw=true" alt="Budget Photo 2">
             </div>
-            <button class="scroll-btn right" onclick="scrollRight('dashboard-carousel-1')">&#10095;</button>
+            <button class="scroll-btn right">&#10095;</button>
         </div>
     </div>
 
