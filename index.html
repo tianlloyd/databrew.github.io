@@ -51,7 +51,12 @@ nav a {
 nav a:hover {
     text-decoration: underline; /* Add underline on hover */
 }
-
+.hero h2,
+.hero p {
+    text-align: center; /* Center the text */
+    margin: 0 auto; /* Ensure it's centrally aligned */
+    max-width: 1200px; /* Optional: Limit the width for better readability */
+}
 /* Dashboard Section */
 .dashboard {
     margin-bottom: 40px;
@@ -85,6 +90,7 @@ nav a:hover {
     width: 100%;
     max-width: 1200px;
     overflow: hidden;
+    border-radius: 0; /* Remove rounded corners */
     height: 500px; /* Set the overall height of the carousel section */
 }
 
@@ -95,11 +101,13 @@ nav a:hover {
 }
 
 .carousel img {
-    height: 100%; /* Ensure images fill the carousel height */
+    height: auto; /* Remove fixed height to maintain full image visibility */
+    max-height: 400px; /* Set a maximum height */
     width: auto; /* Maintain aspect ratio */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    border-radius: 0; /* Remove rounding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional: Keep shadow */
 }
+
 
 /* Scroll Buttons */
 .scroll-btn {
