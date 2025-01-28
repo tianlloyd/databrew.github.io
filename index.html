@@ -121,7 +121,34 @@ nav a:hover {
     scroll-snap-align: center; /* Snap to the center of the visible area */
     flex-shrink: 0; /* Prevent shrinking of images */
 }
+/* Style for the 3rd carousel's items */
+#dashboard-carousel-3 .carousel div {
+    text-align: center;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Ensure captions stay at the top */
+    background-color: #5c3a31; /* Match the darker background for contrast */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0;
+    height: 100%; /* Full height of carousel */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add depth */
+}
 
+/* Add spacing between carousel items */
+#dashboard-carousel-3 .carousel {
+    gap: 20px; /* Space between photos */
+}
+
+/* Caption styling */
+#dashboard-carousel-3 .carousel p {
+    margin-top: 10px;
+    font-size: 1rem; /* Caption font size */
+    color: #ffda79; /* Golden color for caption */
+    font-style: italic;
+}
 
 /* Scroll Buttons */
 .scroll-btn {
@@ -242,21 +269,32 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 
     <!-- Dashboard 3 -->
-    <div class="dashboard">
-        <div class="dashboard-header">
-            <h3>Improvement Plan Dashboard</h3>
-            <p>Deep dive into customer behaviors and preferences.</p>
-        </div>
-        <div class="carousel-container">
-            <button class="scroll-btn left" onclick="scrollLeft('dashboard-carousel-3')">&#10094;</button>
-            <div class="carousel" id="dashboard-carousel-3">
-                <img src="https://via.placeholder.com/800x300?text=Plan+Photo+1" alt="Plan Photo 1">
-                <img src="https://via.placeholder.com/800x300?text=Plan+Photo+2" alt="Plan Photo 2">
-                <img src="https://via.placeholder.com/800x300?text=Plan+Photo+3" alt="Plan Photo 3">
-            </div>
-            <button class="scroll-btn right" onclick="scrollRight('dashboard-carousel-3')">&#10095;</button>
-        </div>
-    </div>
+    <!-- 3rd Dashboard: One-pager Style -->
+     <div class="dashboard">
+         <div class="dashboard-header">
+             <h3>Improvement Plan Dashboard</h3>
+             <p>Deep dive into customer behaviors and preferences.</p>
+         </div>
+         <div class="carousel-container">
+             <button class="scroll-btn left" onclick="scrollLeft('dashboard-carousel-3')">&#10094;</button>
+             <div class="carousel" id="dashboard-carousel-3">
+                 <div>
+                     <img src="https://via.placeholder.com/800x300?text=Plan+Photo+1" alt="Plan Photo 1">
+                     <p>Customer Retention Analysis Dashboard</p>
+                 </div>
+                 <div>
+                     <img src="https://via.placeholder.com/800x300?text=Plan+Photo+2" alt="Plan Photo 2">
+                     <p>Customer Feedback Trends</p>
+                 </div>
+                 <div>
+                     <img src="https://via.placeholder.com/800x300?text=Plan+Photo+3" alt="Plan Photo 3">
+                     <p>Market Improvement Strategies</p>
+                 </div>
+             </div>
+             <button class="scroll-btn right" onclick="scrollRight('dashboard-carousel-3')">&#10095;</button>
+         </div>
+     </div>
+
 </section>
 
 <footer>
