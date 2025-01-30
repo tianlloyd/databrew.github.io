@@ -142,13 +142,16 @@ nav a:hover {
     gap: 20px; /* Space between photos */
 }
 
-/* Caption styling */
-#dashboard-carousel-3 .carousel p {
-    margin-top: 10px;
-    font-size: 1rem; /* Caption font size */
-    color: #ffda79; /* Golden color for caption */
-    font-style: italic;
+/* Specific Styling for Captions in the 3rd Dashboard Carousel */
+#dashboard-carousel-3 .carousel div p {
+    color: #e6e0d0; /* Golden text color */
+    font-size: 0.9rem; /* Smaller font size */
+    text-align: center; /* Center align the captions */
+    font-style: italic; /* Optional: Make captions italic */
+    margin-top: 10px; /* Add space between the image and the caption */
+    margin-bottom: 0; /* Remove any extra bottom margin */
 }
+
 
 /* Scroll Buttons */
 .scroll-btn {
@@ -273,8 +276,8 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- 3rd Dashboard: One-pager Style -->
      <div class="dashboard">
          <div class="dashboard-header">
-             <h3>Improvement Plan Dashboard</h3>
-             <p>Deep dive into customer behaviors and preferences.</p>
+             <h3>Additional Report and Dashboard</h3>
+             <p>Different areas, different functions.</p>
          </div>
          <div class="carousel-container">
              <button class="scroll-btn left" onclick="scrollLeft('dashboard-carousel-3')">&#10094;</button>
