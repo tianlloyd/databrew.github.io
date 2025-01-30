@@ -183,21 +183,33 @@ nav a:hover {
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 40px; /* Increased padding for better spacing */
     background-color: #5A483C;
-    color: #fff;
+    color: #e6e0d0; /* Changed color to match golden text */
     margin-top: 20px;
 }
-<section id="contact" style="padding: 40px; background-color: #5A483C; color: #e6e0d0;">
-    <h2 style="text-align: center;">Get in Touch</h2>
-    <p style="text-align: center;">Have questions or want to collaborate? Reach out to me!</p>
-    <div style="text-align: center;">
-        <p>Email: <a href="mailto:kristian.dimaranan8@gmail.com" style="color: #ffda79;">yourname@example.com</a></p>
-        <p>Phone: <a href="tel:+971551849734" style="color: #ffda79;">+971 55 184 9734</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/kristian-dimaranan-8b137a84/" target="_blank" style="color: #ffda79;">linkedin.com/in/yourprofile</a></p>
-    </div>
-</section>
-     
+
+footer a {
+    color: #ffda79; /* Golden link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #e6e0d0; /* Golden text for heading */
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+ 
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -311,8 +323,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </section>
 
-<footer>
+<footer id="contact">
+    <h2>Contact Me</h2>
+    <p>If you’d like to collaborate, please feel free to reach out!</p>
+    <div>
+        <p>Email: <a href="mailto:kristian.dimaranan8@gmail.com">kristian.dimaranan8@gmail.com</a></p>
+        <p>Phone: <a href="tel:+971551849734">+971 55 184 9734</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/kristian-dimaranan-8b137a84/" target="_blank">linkedin.com/in/yourprofile</a></p>
+    </div>
     <p>&copy; 2025 DataBrew. All rights reserved.</p>
 </footer>
+
 </body>
 </html>
