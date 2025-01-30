@@ -113,7 +113,6 @@ nav a:hover {
 }
 
 .carousel img {
-    height: auto; /* Remove fixed height to maintain full image visibility */
     max-height: 400px; /* Set a maximum height */
     width: auto; /* Maintain aspect ratio */
     border-radius: 0; /* Remove rounding */
@@ -121,10 +120,9 @@ nav a:hover {
     scroll-snap-align: center; /* Snap to the center of the visible area */
     flex-shrink: 0; /* Prevent shrinking of images */
 }
-/* Style for the 3rd carousel's items */
+
 #dashboard-carousel-3 .carousel div {
     text-align: center;
-    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,25 +130,23 @@ nav a:hover {
     background-color: #5c3a31; /* Match the darker background for contrast */
     border-radius: 10px;
     padding: 20px;
-    margin: 0;
     height: 100%; /* Full height of carousel */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add depth */
 }
 
-/* Add spacing between carousel items */
 #dashboard-carousel-3 .carousel {
     gap: 20px; /* Space between photos */
 }
 
-/* Specific Styling for Captions in the 3rd Dashboard Carousel */
 #dashboard-carousel-3 .carousel div p {
     color: #e6e0d0; /* Golden text color */
     font-size: 0.9rem; /* Smaller font size */
     text-align: center; /* Center align the captions */
     font-style: italic; /* Optional: Make captions italic */
     margin-top: 10px; /* Add space between the image and the caption */
-    margin-bottom: 0; /* Remove any extra bottom margin */
+    margin-bottom: 0; /* Remove extra bottom margin */
 }
+
 
 
 /* Scroll Buttons */
@@ -298,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- 3rd Dashboard: One-pager Style -->
      <div class="dashboard">
          <div class="dashboard-header">
-             <h3>Additional Report and Dashboard</h3>
+             <h3>Additional Reports and Dashboards</h3>
              <p>Different areas, different functions.</p>
          </div>
          <div class="carousel-container">
