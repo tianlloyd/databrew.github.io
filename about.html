@@ -6,385 +6,302 @@
     <title>About | DataBrew</title>
     <style>
         body {
-           font-family: 'Roboto', sans-serif;
-           <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f5f6f0; /* Light coffee background */
             color: #000000;
+            line-height: 1.6;
         }
-        /* Shared Header Styles */
+
         header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             background-color: #5A483C; /* Dark coffee header */
-            padding: 5px 20px 10px; /* Unified padding (top, sides, bottom) */
+            padding: 10px 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
-        
+
         header .logo {
             width: 250px;
             height: auto;
             display: block;
             margin: 0 auto; /* Center the logo */
         }
-        
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem; /* Unified font size for title */
-        }
-        
+
         header span {
             display: block;
             font-size: 1rem;
             font-weight: normal;
             color: #e6e0d0; /* Golden caption color */
-            margin-top: 0px;
         }
-        
+
         nav {
-            margin-top: 15px; /* Consistent spacing between nav and caption */
-            margin-bottom: 15px; /
+            margin-top: 15px;
+            margin-bottom: 15px;
         }
-        
+
         nav a {
             color: #e6e0d0; /* Golden link color */
             text-decoration: none;
             margin: 0 15px;
             font-size: 1rem;
-        }
-        
-        nav a:hover {
-            text-decoration: underline; /* Add underline on hover */
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
         }
 
-        no {
-        margin-top: 15px;
+        nav a:hover {
+            color: #ffda79; /* Highlight color on hover */
+            border-bottom: 2px solid #ffda79; /* Add underline effect */
         }
-        
+
         main {
             padding: 40px 20px;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            text-align: left; /* Align text to the left for professionalism */
-        }
-        
-        main h2 {
-            font-size: 2rem;
-            color: #5A483C; /* Golden color for the heading */
-            text-align: center; /* Center the heading */
-            margin-bottom: 20px;
-        }
-        
-        main p {
-            font-size: 1rem;
-            line-height: 1.8; /* Add breathing space between lines */
-            margin-bottom: 20px; /* Space between paragraphs */
-            text-align: center; /* Center-align text */
-        }
-        
-        main ul {
-            list-style-type: disc;
-            margin-left: 40px; /* Indent the list */
-            line-height: 1.8;
-        }
-        
-        main li {
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-        
-        main .highlight {
-            font-weight: bold; /* Bold for emphasis */
-            color: #5A483C; /* Golden highlight for key terms */
-        }
-        
-        main .career-highlights h3 {
-            font-size: 1.5rem;
-            color: #5A483C;
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        
-        main a.link {
-            color: #5A483C; /* Golden color for the link */
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        main a.link:hover {
-            text-decoration: underline;
+            text-align: center;
         }
 
-      footer {
-            text-align: center;
-            padding: 40px; /* Increased padding for better spacing */
-            background-color: #5A483C;
-            color: #e6e0d0; /* Changed color to match golden text */
-            margin-top: 20px;
+        main h2 {
+            font-size: 2.5rem;
+            color: #5A483C;
+            margin-bottom: 20px;
         }
-        
-        footer a {
-            color: #ffda79; /* Golden link color */
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        footer h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #e6e0d0; /* Golden text for heading */
-        }
-        
-        footer p {
+
+        main p {
             font-size: 1rem;
-            margin: 5px 0;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #5A483C; /* Golden highlight */
         }
 
         .carousel-container {
             position: relative;
-            margin: 40px auto; /* Center carousel */
-            width: 100%;
-            max-width: 800px; /* Limit the maximum width */
+            margin: 40px auto;
+            max-width: 800px;
             overflow: hidden;
-            background-color: #5c3a31; /* Match the dashboard background color */
-            border-radius: 10px; /* Rounded corners for a consistent style */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
-            padding: 20px; /* Add padding for inner spacing */
+            background-color: #5c3a31;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 20px;
         }
-            
+
         .carousel {
             display: flex;
-            overflow-x: auto; /* Enable horizontal scrolling */
-            scroll-snap-type: x mandatory; /* Snap scrolling */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
             gap: 20px;
-            padding: 10px 0;
-            height: 400px; /* Set a fixed height */
+            padding: 20px 0;
         }
-        
+
         .carousel img {
-            height: 80%; /* Ensure images fit carousel height */
-            width: auto; /* Maintain aspect ratio */
-            border-radius: 10px;
-            scroll-snap-align: center; /* Snap images into view */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+            max-height: 360px;
+            width: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            scroll-snap-align: center;
+            flex-shrink: 0;
         }
-        
+
         .carousel div {
             text-align: center;
-            height: 100%; /* Ensure the container takes full carousel height */
-            flex-shrink: 0; /* Prevent shrinking */
-            display: flex; /* Align image and caption vertically */
+            display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Align items at the top */
+            align-items: center;
+            justify-content: flex-start;
         }
-       
+
         .carousel p {
             margin-top: 10px;
-            font-size: 1rem; /* Ensure the font size is consistent */
-            color: #e6e0d0; /* Golden caption text */
-            font-style: italic; /* Optional styling */
+            font-size: 0.9rem;
+            color: #e6e0d0;
+            font-style: italic;
         }
-        
+
         .scroll-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(75, 46, 42, 0.8); /* Semi-transparent button */
+            background-color: rgba(75, 46, 42, 0.8);
             border: none;
             color: white;
             padding: 10px 15px;
             cursor: pointer;
             border-radius: 50%;
-            z-index: 1;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        
+
         .scroll-btn.left {
             left: 10px;
         }
-        
+
         .scroll-btn.right {
             right: 10px;
         }
-        
+
         .scroll-btn:hover {
-            background-color: #e6e0d0; /* Highlight button on hover */
+            background-color: #ffda79;
             color: #5A483C;
+            transform: scale(1.1);
         }
 
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #5A483C;
+            color: #e6e0d0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ffda79;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #e6e0d0;
+        }
+
+        footer h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
     </style>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const carousels = document.querySelectorAll(".carousel-container");
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const carousels = document.querySelectorAll(".carousel-container");
 
-    carousels.forEach((carouselContainer) => {
-        const carousel = carouselContainer.querySelector(".carousel");
-        const leftButton = carouselContainer.querySelector(".scroll-btn.left");
-        const rightButton = carouselContainer.querySelector(".scroll-btn.right");
+            carousels.forEach((carouselContainer) => {
+                const carousel = carouselContainer.querySelector(".carousel");
+                const leftButton = carouselContainer.querySelector(".scroll-btn.left");
+                const rightButton = carouselContainer.querySelector(".scroll-btn.right");
 
-        let scrollAmount = carousel.offsetWidth; // Dynamically calculate scroll width
+                const scrollAmount = () => carousel.clientWidth;
 
-        // Update scroll amount on resize for responsiveness
-        window.addEventListener("resize", () => {
-            scrollAmount = carousel.offsetWidth;
-        });
+                leftButton.addEventListener("click", () => {
+                    carousel.scrollBy({
+                        left: -scrollAmount(),
+                        behavior: "smooth",
+                    });
+                });
 
-        // Scroll left function
-        leftButton.addEventListener("click", () => {
-            carousel.scrollBy({
-                left: -scrollAmount,
-                behavior: "smooth",
+                rightButton.addEventListener("click", () => {
+                    carousel.scrollBy({
+                        left: scrollAmount(),
+                        behavior: "smooth",
+                    });
+                });
             });
         });
-
-        // Scroll right function
-        rightButton.addEventListener("click", () => {
-            carousel.scrollBy({
-                left: scrollAmount,
-                behavior: "smooth",
-            });
-        });
-    });
-});
-</script>
-
+    </script>
 </head>
 <body>
     <header>
         <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/DataBrewWhite.png?raw=true" alt="DataBrew Logo" class="logo">
         <span>by Kristian Dimaranan</span>
-        <no>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="#contact">Contact</a>
         </nav>
-        </no>
     </header>
 
     <main>
-    <!-- About Me Heading -->
-    <h2>About Me</h2>
-
-    <!-- Introduction -->
-    <p>
-        Hello! I'm <span class="highlight">Kristian Dimaranan</span>, a seasoned data analyst and business analyst, 
-        with over a decade of experience turning complex business processes into scalable solutions. 
-    </p>
-
-    <!-- Insert Image -->
-    <div style="text-align: center; margin: 20px 0;">
-        <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Work%20History.png?raw=true" 
-             alt="Work History Overview" 
-             style="width: 100%; max-width: 800px; height: auto; box-shadow: none; border: none;">
- </div>
-
-        <!-- Specialization -->
-    <p>
-        Leveraging my experience in system management and business intelligence, I specialize in bridging the gap between 
-        <span class="highlight">business needs</span> and <span class="highlight">technical solutions</span>—translating complex 
-        requirements into robust, scalable systems or insightful reports and dashboards.<span class="highlight">
-    </p>
-
-            <!-- DataBrew Introduction -->
-    <p>
-        At <span class="highlight">DataBrew</span>, I showcase my portfolio that deliver clear, actionable insights using the latest and most advance features of Power BI.
-        <span class="highlight">DataBrew</span> is rooted in my experience working with the executive and mid-level management to align strategic goals with practical, hands-on implementation, 
-        designing user-friendly systems, and driving process improvements that reduce costs and maximize impact.
-    </p>
-
-    <!-- Closing -->
-    <p>
-        Welcome to <span class="highlight">DataBrew</span>—where insights are brewed to perfection, and business 
-        transformation takes center stage. Feel free to explore my work or <a href="#contact" class="link">reach out</a> 
-        if you'd like to collaborate!
-    </p>
-    <!-- Carousel Section -->
-<div class="carousel-container">
-    <!-- Left Scroll Button -->
-    <button class="scroll-btn left" onclick="scrollLeft('about-carousel')">&#10094;</button>
-    
-    <!-- Carousel Wrapper -->
-    <div class="carousel" id="about-carousel">
-        <!-- First Item -->
-        <div>  
+        <h2>About Me</h2>
+        <p>Hello! I'm <span class="highlight">Kristian Dimaranan</span>, a seasoned data analyst and business analyst with over a decade of experience turning complex business processes into scalable solutions.</p>
+        <div>
+            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Work%20History.png?raw=true" alt="Work History Overview" style="width: 100%; max-width: 800px; height: auto; border: none;">
+        </div>
+        <p>I specialize in bridging the gap between <span class="highlight">business needs</span> and <span class="highlight">technical solutions</span>, delivering robust, scalable systems and actionable insights.</p>
+        <p>At <span class="highlight">DataBrew</span>, I showcase dashboards and tools using Power BI to support business transformation.</p>
+        <div class="carousel-container">
+            <button class="scroll-btn left">&#10094;</button>
+            <div class="carousel" id="about-carousel">
+                <!-- Carousel Items -->
+                <div>  
             <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1709361030707.jpg?raw=true" alt="Photo 1">
             <p>Research paper publication - Artificial Intelligence in the Workplace</p>
-        </div>
-
-        <div>  
-            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/20180927_162645.jpg?raw=true" alt="Photo 2">
-            <p>Camstar MES Bootcamp @ Nampa, Idaho</p>
-        </div>
-        
-        <!-- Second Item -->
-
-        <div>
-            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/20190412_153511.jpg?raw=true alt="Photo 4">
-            <p>With Suzhou IT Team for Camstar Development Training @ Suzhuo, China </p>
-        </div>
-
-         <div>
-            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/IMG_6026.JPG?raw=true" alt="Photo 5">
-            <p>With Leshan IT Team for Genesis MES Reconciliation Project</p>
-        </div>
-
-        <div>
-            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1726290213196.jpg?raw=true" alt="Photo 3">
-            <p>Finalist presenting for Tech and Innovation Program - Artificial Intelligence at Aldar</p>
-        </div>
-        
-        <!-- Third Item -->
-        <div>
-            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1614701415114.jpg?raw=true" alt="Photo 6">
-            <p>Best Technical Paper and Best Presenter Award for 28th ASEMEP National Technical Symposium</p>
-        </div>
-
-        <div>
-            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/20180927_141901.jpg?raw=true" alt="Photo 7">
-            <p>SME for Solarwinds Implementation @ Oregon, USA </p>
-        </div>
-        
-        <div>
-            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/IMG_20171207_154044.jpg?raw=true" alt="Photo 8">
-            <p>ITIL V3 Certification and Completion</p>
-        </div>
-        
-        <!-- Fourth Item -->
-        <div>
-            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1726290217795.jpg?raw=true" alt="Photo 9">
-            <p>Overall winner - Ibtikar Tech and Innovation Program for 2024.</p>
-        </div>
-
-        <div>
-            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/IMG_5336.JPG?raw=true" alt="Photo 10">
-            <p>Lean Six Sigma - Green Belt Train the Trainer Program</p>
-        </div>
-
-        <div>
-            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/IMG_9102.JPG?raw=true" alt="Photo 11">
-            <p>Awarding of Lean Six Sigma Green belt Certification Program and Class Valedictorian</p>
-        </div>
-        
-    </div>
+            </div>
     
-    <!-- Right Scroll Button -->
-    <button class="scroll-btn right" onclick="scrollRight('about-carousel')">&#10095;</button>
-</div>
+            <div>  
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/20180927_162645.jpg?raw=true" alt="Photo 2">
+                <p>Camstar MES Bootcamp @ Nampa, Idaho</p>
+            </div>
+            
+            <!-- Second Item -->
+    
+            <div>
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/20190412_153511.jpg?raw=true alt="Photo 4">
+                <p>With Suzhou IT Team for Camstar Development Training @ Suzhuo, China </p>
+            </div>
+    
+             <div>
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/IMG_6026.JPG?raw=true" alt="Photo 5">
+                <p>With Leshan IT Team for Genesis MES Reconciliation Project</p>
+            </div>
+    
+            <div>
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1726290213196.jpg?raw=true" alt="Photo 3">
+                <p>Finalist presenting for Tech and Innovation Program - Artificial Intelligence at Aldar</p>
+            </div>
+            
+            <!-- Third Item -->
+            <div>
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1614701415114.jpg?raw=true" alt="Photo 6">
+                <p>Best Technical Paper and Best Presenter Award for 28th ASEMEP National Technical Symposium</p>
+            </div>
+    
+            <div>
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/20180927_141901.jpg?raw=true" alt="Photo 7">
+                <p>SME for Solarwinds Implementation @ Oregon, USA </p>
+            </div>
+            
+            <div>
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/IMG_20171207_154044.jpg?raw=true" alt="Photo 8">
+                <p>ITIL V3 Certification and Completion</p>
+            </div>
+            
+            <!-- Fourth Item -->
+            <div>
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/1726290217795.jpg?raw=true" alt="Photo 9">
+                <p>Overall winner - Ibtikar Tech and Innovation Program for 2024.</p>
+            </div>
+    
+            <div>
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/IMG_5336.JPG?raw=true" alt="Photo 10">
+                <p>Lean Six Sigma - Green Belt Train the Trainer Program</p>
+            </div>
+    
+            <div>
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/KDPhotos/IMG_9102.JPG?raw=true" alt="Photo 11">
+                <p>Awarding of Lean Six Sigma Green belt Certification Program and Class Valedictorian</p>
+            </div>
 
-</main>
-  <footer id="contact">
-    <h2>Contact Me</h2>
-    <div>
-        <p>Email: <a href="mailto:kristian.dimaranan8@gmail.com">kristian.dimaranan8@gmail.com</a></p>
-        <p>Phone: <a href="tel:+971551849734">+971 55 184 9734</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/kristian-dimaranan-8b137a84/" target="_blank">www.linkedin.com/in/kristian-dimaranan-8b137a84</a></p>
-    </div>
-    <p>&copy; 2025 DataBrew. All rights reserved.</p>
-</footer>
+            </div>
+            <button class="scroll-btn right">&#10095;</button>
+        </div>
+    </main>
 
+    <footer id="contact">
+        <h2>Contact Me</h2>
+        <div>
+            <p>Email: <a href="mailto:kristian.dimaranan8@gmail.com">kristian.dimaranan8@gmail.com</a></p>
+            <p>Phone: <a href="tel:+971551849734">+971 55 184 9734</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/kristian-dimaranan-8b137a84/" target="_blank">LinkedIn</a></p>
+        </div>
+        <p>&copy; 2025 DataBrew. All rights reserved.</p>
+    </footer>
 </body>
 </html>
