@@ -240,6 +240,38 @@
     </style>
 </head>
 <body>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const carousels = document.querySelectorAll(".carousel-container");
+
+        carousels.forEach((carouselContainer) => {
+            const carousel = carouselContainer.querySelector(".carousel");
+            const leftButton = carouselContainer.querySelector(".scroll-btn.left");
+            const rightButton = carouselContainer.querySelector(".scroll-btn.right");
+
+            // Calculate the amount to scroll (based on carousel width)
+            const scrollAmount = () => carousel.clientWidth;
+
+            // Scroll Left
+            leftButton.addEventListener("click", () => {
+                carousel.scrollBy({
+                    left: -scrollAmount(),
+                    behavior: "smooth",
+                });
+            });
+
+            // Scroll Right
+            rightButton.addEventListener("click", () => {
+                carousel.scrollBy({
+                    left: scrollAmount(),
+                    behavior: "smooth",
+                });
+            });
+        });
+    });
+</script>
+
     <header>
         <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/DataBrewWhite.png?raw=true" alt="DataBrew Logo" class="logo">
         <span>by Kristian Dimaranan</span>
