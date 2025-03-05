@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References | DataBrew</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f6f0; 
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #5A483C; 
+            padding: 10px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header .logo {
+            width: 250px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        header span {
+            display: block;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #e6e0d0;
+        }
+
+        nav {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        nav a {
+            color: #e6e0d0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffda79;
+            border-bottom: 2px solid #ffda79;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        main h2 {
+            font-size: 2.5rem;
+            color: #5A483C;
+            margin-bottom: 20px;
+        }
+
+        .references-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .reference-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        .reference-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+            border: 3px solid #5A483C;
+        }
+
+        .reference-details {
+            flex: 1;
+        }
+
+        .reference-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #5A483C;
+        }
+
+        .reference-text {
+            font-size: 1rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .linkedin-link {
+            font-size: 0.9rem;
+            color: #ffda79;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .linkedin-link:hover {
+            text-decoration: underline;
+            color: #e6e0d0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #5A483C;
+            color: #e6e0d0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ffda79;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #e6e0d0;
+        }
+
+        footer h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/DataBrewWhite.png?raw=true" alt="DataBrew Logo" class="logo">
+        <span>by Kristian Dimaranan</span>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="references.html">References</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Professional References</h2>
+        <p>Here are some testimonials from colleagues and professionals I've worked with:</p>
+
+        <div class="references-container">
+            <!-- Reference 1 -->
+            <div class="reference-card">
+                <img src="https://via.placeholder.com/80" alt="Person 1" class="reference-photo">
+                <div class="reference-details">
+                    <p class="reference-name">John Doe, Senior Data Scientist</p>
+                    <p class="reference-text">
+                        "Kristian is a remarkable data analyst with deep expertise in business intelligence. His dashboards 
+                        transformed our reporting process and helped our leadership make informed decisions."
+                    </p>
+                    <a href="#" class="linkedin-link" target="_blank">View on LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Reference 2 -->
+            <div class="reference-card">
+                <img src="https://via.placeholder.com/80" alt="Person 2" class="reference-photo">
+                <div class="reference-details">
+                    <p class="reference-name">Jane Smith, Business Analyst</p>
+                    <p class="reference-text">
+                        "I had the pleasure of working with Kristian on multiple projects. His ability to bridge technical 
+                        and business requirements is unmatched, making him an asset to any team."
+                    </p>
+                    <a href="#" class="linkedin-link" target="_blank">View on LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Reference 3 -->
+            <div class="reference-card">
+                <img src="https://via.placeholder.com/80" alt="Person 3" class="reference-photo">
+                <div class="reference-details">
+                    <p class="reference-name">Emily Johnson, IT Director</p>
+                    <p class="reference-text">
+                        "Kristian's data visualization skills are outstanding. He built Power BI dashboards that made complex 
+                        data easily digestible, greatly improving our team's efficiency."
+                    </p>
+                    <a href="#" class="linkedin-link" target="_blank">View on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <h2>Contact Me</h2>
+        <div>
+            <p>Email: <a href="mailto:kristian.dimaranan8@gmail.com">kristian.dimaranan8@gmail.com</a></p>
+            <p>Phone: <a href="tel:+971551849734">+971 55 184 9734</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/kristian-dimaranan-8b137a84/" target="_blank">LinkedIn</a></p>
+        </div>
+        <p>&copy; 2025 DataBrew. All rights reserved.</p>
+    </footer>
+</body>
+</html>
