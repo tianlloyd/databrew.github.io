@@ -74,8 +74,8 @@
             display: flex;
             flex-direction: column;
             gap: 25px; /* Consistent space between testimonials */
-            background: transparent; /* Removes any extra background */
-            padding: 0; /* Reset unnecessary padding */
+            background: transparent;
+            padding: 0;
             margin: 0 auto;
         }
 
@@ -88,8 +88,8 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             margin-bottom: 25px; /* Ensures equal space between testimonials */
-            min-height: auto; /* Remove fixed height that causes extra space */
-            position: relative; /* Keeps background contained */
+            position: relative;
+            min-height: 160px; /* Forces consistent height across all testimonials */
         }
 
         .reference-photo {
@@ -102,10 +102,11 @@
         }
 
         .reference-details {
-            flex: 1;
+            flex: 1; /* Ensures the text section takes up full width */
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Prevents extra space below text */
+            justify-content: center; /* Aligns text properly */
+            min-height: 120px; /* Prevents smaller cards from shrinking */
         }
 
         .reference-name {
@@ -118,6 +119,12 @@
             font-size: 1rem;
             color: #333;
             margin: 10px 0;
+        }
+       
+        @media (min-width: 768px) {
+    .testimonial {
+        min-height: 200px; /* Forces equal height in desktop view */
+            }
         }
 
         .linkedin-link {
