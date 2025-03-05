@@ -73,23 +73,23 @@
         .references-container {
             display: flex;
             flex-direction: column;
-            gap: 30px; /* Space between testimonials */
-            background: transparent; /* Removes the unnecessary extra white background */
-            padding: 0; /* Reset any extra padding */
+            gap: 25px; /* Consistent space between testimonials */
+            background: transparent; /* Removes any extra background */
+            padding: 0; /* Reset unnecessary padding */
             margin: 0 auto;
         }
 
         .reference-card {
             display: flex;
             align-items: flex-start; /* Ensures alignment at the top */
-            gap: 20px; /* Adds spacing between image and text */
+            gap: 20px; /* Space between image and text */
             background: #fff; 
-            padding: 20px; /* Ensures even padding */
+            padding: 20px; /* Uniform padding */
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px; /* Ensures space between testimonials */
-            min-height: 200px; /* Forces uniform height */
-            position: relative; /* Ensures the background is contained */
+            margin-bottom: 25px; /* Ensures equal space between testimonials */
+            min-height: auto; /* Remove fixed height that causes extra space */
+            position: relative; /* Keeps background contained */
         }
 
         .reference-photo {
@@ -103,6 +103,9 @@
 
         .reference-details {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Prevents extra space below text */
         }
 
         .reference-name {
