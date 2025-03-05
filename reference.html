@@ -70,10 +70,10 @@
             margin-bottom: 20px;
         }
 
-               .references-container {
+        .references-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px; /* Ensures uniform spacing */
         }
 
         .reference-card {
@@ -82,33 +82,38 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Aligns text and image at the top */
             text-align: left;
+            min-height: 180px; /* Adjusted to prevent inconsistent height */
+            gap: 20px; /* Space between image and text */
         }
 
         .reference-photo {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            margin-right: 20px;
             object-fit: cover;
             border: 3px solid #5A483C;
         }
 
         .reference-details {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .reference-name {
             font-size: 1.2rem;
             font-weight: bold;
             color: #5A483C;
+            margin-bottom: 5px;
         }
 
         .reference-text {
             font-size: 1rem;
             color: #333;
-            margin: 10px 0;
+            margin: 0; /* Removes extra bottom space */
         }
 
         .linkedin-link {
@@ -150,8 +155,7 @@
             font-size: 1rem;
             margin: 5px 0;
         }
-    
-         </style>
+    </style>
 </head>
 <body>
     <header>
@@ -176,10 +180,7 @@
                 <div class="reference-details">
                     <p class="reference-name">Scott Andrew, Director - US IT Manufacturing Operations System</p>
                     <p class="reference-text">
-                        I worked with Kristian while at ON Semiconductor. He lead a team that provided first-level support for our Camstar MES manufacturing sites globally, and he was the 2018 PwC audit point-of-contact for ATO CIM. 
-                        I partnered very closely with him in both roles. He is an excellent communicator with great analytical and problem solving skills. 
-                        He has always been someone that I could trust and depend on. And he was a consistent encouragement and example to all of those around him. 
-                        His leadership, his support, and all of the other qualities highlighted above are already missed, but will surely be credited to his next role and employer.
+                        I worked with Kristian while at ON Semiconductor. He lead a team that provided first-level support for our Camstar MES manufacturing sites globally...
                     </p>
                 </div>
             </div>
@@ -190,9 +191,7 @@
                 <div class="reference-details">
                     <p class="reference-name">Anne Corder, Country Manager - HROD</p>
                     <p class="reference-text">
-                        Kristian started as a cadet engineer at ON Semiconductor Phils Inc. 
-                        After the 8 months training, he has shown exemplary performance, presented technical papers, performed above and beyond, led teams of engineers and has made his way up as a section manager. 
-                        His inquisitiveness led to so much learning and he never rests on his laurels. His passion to learn never ceases. I am sure this young, passionate and dedicated engineer will be a CIO someday.
+                        Kristian started as a cadet engineer at ON Semiconductor Phils Inc. After the 8 months training, he has shown exemplary performance...
                     </p>
                 </div>
             </div>
@@ -203,29 +202,22 @@
                 <div class="reference-details">
                     <p class="reference-name">Aravind Mahalingam, Architect - Oracle HCM Cloud</p>
                     <p class="reference-text">
-                        Kristian is a great professional and I am glad that we worked together in HCM Implementation. 
-                        He was leading the entire HCM track from the business. His extensive system knowledge combined with HR process knowledge and his ability to adapt the global best practices helped in finalizing a robust HCM Solution. 
-                        It was such a pleasure to work with an intelligent person like Kristian and am sure he is a C-Level executive in the making.
+                        Kristian is a great professional and I am glad that we worked together in HCM Implementation...
                     </p>
                 </div>
             </div>
-        </div>
 
-        <!-- Reference 4 -->
+            <!-- Reference 4 -->
             <div class="reference-card">
                 <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/Josh.jpg?raw=true" alt="Person 4" class="reference-photo">
                 <div class="reference-details">
                     <p class="reference-name">Joshua Hernandez, Team Lead - Quality Design Services</p>
                     <p class="reference-text">
-                        Kristian was a Subject Matter Expert during his teaching stint in De La Salle University - Dasmarinas. I can attest to his effective communication style and robust knowledge of the subject he's teaching.
-                        He was able to relay complicated theories into practical bites digestible to audiences of various intellectual capacities, and bridged the wide gap of theory and practice in the semiconductor industry. 
-                        He was generous with his knowledge and time and understands that cascading it not only benefits him, but also future professionals. 
-                        It will not come as a surprise if he becomes successful at anything he does.
+                        Kristian was a Subject Matter Expert during his teaching stint in De La Salle University - Dasmarinas...
                     </p>
                 </div>
             </div>
         </div>
-
     </main>
 
     <footer id="contact">
