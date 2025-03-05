@@ -78,62 +78,66 @@
             padding: 0;
             margin: 0 auto;
         }
-
+        
         .reference-card {
             display: flex;
-            align-items: flex-start; /* Ensures alignment at the top */
+            align-items: flex-start; /* Align items at the top */
             gap: 20px; /* Space between image and text */
             background: #fff; 
             padding: 20px; /* Uniform padding */
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            margin-bottom: 25px; /* Ensures equal space between testimonials */
+            margin-bottom: 25px; /* Ensures equal spacing between testimonials */
             position: relative;
             min-height: 160px; /* Forces consistent height across all testimonials */
         }
-
+        
         .reference-photo {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            margin-right: 20px;
             object-fit: cover;
             border: 3px solid #5A483C;
         }
-
+        
         .reference-details {
-            flex: 1; /* Ensures the text section takes up full width */
+            flex: 1; /* Ensures text takes full width */
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Aligns text properly */
-            min-height: 120px; /* Prevents smaller cards from shrinking */
+            justify-content: center; /* Align text properly */
+            text-align: left; /* Left-aligns everything */
         }
-
+        
         .reference-name {
             font-size: 1.2rem;
             font-weight: bold;
             color: #5A483C;
+            margin-bottom: 5px; /* Adds space below name */
+            text-align: left; /* Ensures name is left-aligned */
         }
-
+        
         .reference-text {
             font-size: 1rem;
             color: #333;
-            margin: 10px 0;
+            margin: 0; /* Removes unnecessary extra spacing */
+            text-align: left; /* Ensures text is left-aligned */
         }
-       
+        
+        /* Fix for uniform height on all cards */
         @media (min-width: 768px) {
-    .testimonial {
-        min-height: 200px; /* Forces equal height in desktop view */
+            .reference-card {
+                min-height: 200px; /* Forces equal height on larger screens */
             }
         }
-
+        
+        /* LinkedIn Profile Link Styling */
         .linkedin-link {
             font-size: 0.9rem;
             color: #ffda79;
             text-decoration: none;
             font-weight: bold;
         }
-
+        
         .linkedin-link:hover {
             text-decoration: underline;
             color: #e6e0d0;
