@@ -18,7 +18,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background-color: #5A483C;
+            background-color: #5A483C; 
             padding: 10px 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -31,162 +31,100 @@
             margin: 0 auto;
         }
 
-        header span {
-            display: block;
-            font-size: 1rem;
-            font-weight: normal;
-            color: #e6e0d0;
-        }
-
-        nav {
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-
-        nav a {
-            color: #e6e0d0;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1rem;
-            border-bottom: 2px solid transparent;
-            transition: color 0.3s ease, border-bottom 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ffda79;
-            border-bottom: 2px solid #ffda79;
-        }
-
         main {
             padding: 40px 20px;
-            max-width: 900px;
+            max-width: 600px; /* Narrower layout */
             margin: 0 auto;
             text-align: center;
-        }
-
-        main h2 {
-            font-size: 2.5rem;
-            color: #5A483C;
-            margin-bottom: 20px;
         }
 
         .carousel-container {
             position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             background-color: #fff;
-            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            padding: 40px 20px;
+            margin-top: 20px;
         }
 
         .carousel {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            overflow: hidden;
         }
 
-        .carousel-item {
+        .testimonial-card {
             min-width: 100%;
             box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 15px;
         }
 
-        .reference-photo {
+        .testimonial-photo {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #ffda79;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border: 4px solid #5A483C;
+            margin-bottom: 10px;
         }
 
-        .reference-details {
-            text-align: center;
+        .testimonial-content {
             background-color: #5A483C;
             color: #e6e0d0;
-            border-radius: 10px;
-            padding: 15px;
-            width: 100%;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 10px;
         }
 
-        .reference-name {
-            font-size: 1.2rem;
+        .testimonial-name {
             font-weight: bold;
+            font-size: 1.2rem;
             color: #ffda79;
-        }
-
-        .reference-text {
-            font-size: 1rem;
-            color: #e6e0d0;
-            margin-top: 5px;
         }
 
         .scroll-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(90, 72, 60, 0.8);
+            background-color: rgba(75, 46, 42, 0.8);
             border: none;
             color: #fff;
             padding: 10px 15px;
             cursor: pointer;
             border-radius: 50%;
-            font-size: 1.5rem;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
 
-        .scroll-btn.left {
-            left: -40px; /* Improved positioning */
-        }
-
-        .scroll-btn.right {
-            right: -40px; /* Improved positioning */
-        }
+        .scroll-btn.left { left: 10px; }
+        .scroll-btn.right { right: 10px; }
 
         .scroll-btn:hover {
             background-color: #ffda79;
             color: #5A483C;
         }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            background-color: #5A483C;
-            color: #e6e0d0;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: #ffda79;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer a:hover {
-            color: #e6e0d0;
-        }
-
-        footer h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        footer p {
-            font-size: 1rem;
-            margin: 5px 0;
-        }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const carousel = document.querySelector(".carousel");
+            const leftButton = document.querySelector(".scroll-btn.left");
+            const rightButton = document.querySelector(".scroll-btn.right");
+
+            let index = 0;
+
+            const moveCarousel = (direction) => {
+                const testimonials = document.querySelectorAll(".testimonial-card");
+                const totalTestimonials = testimonials.length;
+                index = (index + direction + totalTestimonials) % totalTestimonials;
+                const offset = -index * 100;
+                carousel.style.transform = `translateX(${offset}%)`;
+            };
+
+            leftButton.addEventListener("click", () => moveCarousel(-1));
+            rightButton.addEventListener("click", () => moveCarousel(1));
+        });
+    </script>
 </head>
 <body>
     <header>
         <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/DataBrewWhite.png?raw=true" alt="DataBrew Logo" class="logo">
-        <span>by Kristian Dimaranan</span>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -195,7 +133,7 @@
         </nav>
     </header>
 
-    <main>
+      <main>
         <h2>References and Recommendations</h2>
         <p>Here are some testimonials from colleagues and professionals I've worked with:</p>
 
@@ -256,22 +194,11 @@
                 </div>
             </div>
         </div>-->
-            <button class="scroll-btn right" onclick="moveCarousel(1)">&#10095;</button>
+            <button class="scroll-btn right">&#10095;</button>
         </div>
     </main>
-
-    <script>
-        let currentIndex = 0;
-
-        function moveCarousel(direction) {
-            const carousel = document.getElementById('carousel');
-            const items = document.querySelectorAll('.carousel-item');
-            const totalItems = items.length;
-
-            currentIndex = (currentIndex + direction + totalItems) % totalItems;
-            const offset = currentIndex * -100;
-            carousel.style.transform = `translateX(${offset}%)`;
-        }
+</body>
+</html>
     </script>
     <footer id="contact">
         <h2>Contact Me</h2>
