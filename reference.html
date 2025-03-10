@@ -9,15 +9,12 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f6f0; 
+            background-color: #f5f6f0;
             color: #000000;
             line-height: 1.6;
         }
 
         header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
             background-color: #5A483C;
             padding: 10px 20px;
             text-align: center;
@@ -29,13 +26,6 @@
             height: auto;
             display: block;
             margin: 0 auto;
-        }
-
-        header span {
-            display: block;
-            font-size: 1rem;
-            font-weight: normal;
-            color: #e6e0d0;
         }
 
         nav {
@@ -59,78 +49,72 @@
 
         main {
             padding: 40px 20px;
-            max-width: 900px;
+            max-width: 400px; /* Narrower design for vertical layout */
             margin: 0 auto;
             text-align: center;
         }
 
-        main h2 {
-            font-size: 2.5rem;
-            color: #5A483C;
-            margin-bottom: 20px;
-        }
-
         .carousel-container {
             position: relative;
-            width: 100%;
-            max-width: 700px;
             margin: 0 auto;
-            overflow: hidden;
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            background-color: #fff;
-            padding: 20px;
+            overflow: hidden;
+            max-width: 400px;
         }
 
         .carousel {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 0.5s ease;
         }
 
         .carousel-item {
-            min-width: 100%;
+            flex: 0 0 100%;
+            padding: 20px;
             box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            gap: 20px;
         }
 
-        .reference-photo {
-            width: 100px;
-            height: 100px;
+        .carousel img {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
+            border: 4px solid #5A483C;
             object-fit: cover;
-            border: 3px solid #5A483C;
+            margin-bottom: 10px;
         }
 
-        .reference-details {
+        .carousel-content {
+            background-color: #5A483C;
+            color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 10px;
             text-align: left;
         }
 
-        .reference-name {
-            font-size: 1.2rem;
+        .carousel-content .reference-name {
             font-weight: bold;
-            color: #5A483C;
+            margin-bottom: 5px;
+            color: #ffda79;
         }
 
-        .reference-text {
-            font-size: 1rem;
-            color: #333;
-            margin-top: 5px;
+        .carousel-content .reference-text {
+            font-size: 0.9rem;
+            margin: 5px 0;
         }
 
         .scroll-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(90, 72, 60, 0.8);
+            background-color: rgba(75, 46, 42, 0.8);
             border: none;
-            color: #fff;
+            color: white;
             padding: 10px 15px;
             cursor: pointer;
             border-radius: 50%;
-            font-size: 1.5rem;
-            transition: background-color 0.3s;
+            z-index: 10;
         }
 
         .scroll-btn.left {
@@ -153,32 +137,32 @@
             color: #e6e0d0;
             margin-top: 40px;
         }
-
-        footer a {
-            color: #ffda79;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer a:hover {
-            color: #e6e0d0;
-        }
-
-        footer h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        footer p {
-            font-size: 1rem;
-            margin: 5px 0;
-        }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const carousel = document.querySelector('.carousel');
+            const items = document.querySelectorAll('.carousel-item');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                carousel.style.transform = `translateX(-${index * 100}%)`;
+            }
+
+            document.querySelector('.scroll-btn.left').addEventListener('click', () => {
+                currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
+                showSlide(currentIndex);
+            });
+
+            document.querySelector('.scroll-btn.right').addEventListener('click', () => {
+                currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
+                showSlide(currentIndex);
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
         <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/DataBrewWhite.png?raw=true" alt="DataBrew Logo" class="logo">
-        <span>by Kristian Dimaranan</span>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -186,7 +170,6 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
-
 
     <main>
         <h2>References and Recommendations</h2>
@@ -272,32 +255,18 @@
                     </p>
                 </div>
             </div>
+            <button class="scroll-btn right">&#10095;</button>
         </div>
     </main>
 
-    <script>
-        let currentIndex = 0;
-
-        function moveCarousel(direction) {
-            const carousel = document.getElementById('carousel');
-            const items = document.querySelectorAll('.carousel-item');
-            const totalItems = items.length;
-
-            currentIndex = (currentIndex + direction + totalItems) % totalItems;
-            const offset = currentIndex * -100;
-            carousel.style.transform = `translateX(${offset}%)`;
-        }
-    </script>
-
-    <footer id="contact">
+    <footer>
         <h2>Contact Me</h2>
-        <div>
-            <p>Email: <a href="mailto:kristian.dimaranan8@gmail.com">kristian.dimaranan8@gmail.com</a></p>
-            <p>Phone: <a href="tel:+971551849734">+971 55 184 9734</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/kristian-dimaranan-8b137a84/" target="_blank">LinkedIn</a></p>
-        </div>
+        <p>Email: <a href="mailto:kristian.dimaranan8@gmail.com">kristian.dimaranan8@gmail.com</a></p>
+        <p>Phone: <a href="tel:+971551849734">+971 55 184 9734</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/kristian-dimaranan-8b137a84/" target="_blank">LinkedIn</a></p>
         <p>&copy; 2025 DataBrew. All rights reserved.</p>
     </footer>
 </body>
 </html>
+
 
