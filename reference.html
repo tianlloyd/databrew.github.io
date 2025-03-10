@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>References | DataBrew</title>
+    <title>Recommendations | DataBrew</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f6f0; 
+            background-color: #f5f6f0;
             color: #000000;
             line-height: 1.6;
         }
@@ -18,7 +18,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background-color: #5A483C; 
+            background-color: #5A483C;
             padding: 10px 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -34,7 +34,6 @@
         header span {
             display: block;
             font-size: 1rem;
-            font-weight: normal;
             color: #e6e0d0;
         }
 
@@ -59,7 +58,7 @@
 
         main {
             padding: 40px 20px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             text-align: center;
         }
@@ -70,79 +69,61 @@
             margin-bottom: 20px;
         }
 
-        main p {
-            font-size: 1rem;
-            color: #333;
-            margin-bottom: 20px;
+        .testimonial-card {
+            background-color: #fdfaf6;
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .references-container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .reference-card {
-            background: linear-gradient(145deg, #fff7eb, #f5f0e8);
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            padding: 30px 20px;
-            text-align: center;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .reference-card:hover {
+        .testimonial-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .reference-photo {
-            width: 120px;
-            height: 120px;
+        .profile-image {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             border: 4px solid #5A483C;
-            object-fit: cover;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 0 auto 15px;
         }
 
-        .reference-name {
+        .testimonial-name {
             font-size: 1.4rem;
             font-weight: bold;
             color: #5A483C;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
-        .reference-title {
+        .testimonial-title {
             font-size: 1rem;
-            color: #7A6656;
+            color: #9a8269;
             margin-top: 5px;
-            font-weight: 500;
         }
 
-        .reference-divider {
-            width: 60px;
-            height: 3px;
-            background-color: #ffda79;
-            margin: 10px auto;
-        }
-
-        .reference-text {
-            font-size: 1rem;
-            color: #333;
+        .testimonial-text {
             text-align: justify;
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
+            margin-top: 20px;
+            padding: 0 20px;
+            color: #333;
         }
 
-        .reference-text::before {
-            content: "❝";
-            font-size: 3rem;
-            color: #e6e0d0;
-            position: absolute;
-            top: -30px;
-            left: -10px;
-            opacity: 0.5;
+        .quote-icon {
+            font-size: 2rem;
+            color: #ffda79;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background-color: #ffda79;
+            margin: 20px auto;
         }
 
         footer {
@@ -190,89 +171,92 @@
         <h2>Recommendations</h2>
         <p>Here are testimonials from colleagues and professionals I've worked with:</p>
 
-        <div class="references-container">
-
-            <div class="reference-card">
-                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/DT2.jpg?raw=true" alt="Dave Taylor" class="reference-photo">
-                <p class="reference-name">Dave Taylor</p>
-                <p class="reference-title">Chief Operations Officer</p>
-                <p class="reference-title">Aldar Education</p>
-                <div class="reference-divider"></div>
-                <p class="reference-text">
-                     It has been an absolute pleasure working with Kristian. His expert ability to understand and identify business needs, analyse data across multiple areas, and provide the executive team with the insights required for strategic decision-making is outstanding.
+        <div class="testimonial-card">
+            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/DT2.jpg?raw=true" alt="Dave Taylor" class="profile-image">
+            <p class="testimonial-name">Dave Taylor</p>
+            <p class="testimonial-title">Chief Operations Officer</p>
+            <p class="testimonial-title">Aldar Education</p>
+            <div class="divider"></div>
+            <p class="testimonial-text">
+                <span class="quote-icon">❝</span>
+                It has been an absolute pleasure working with Kristian. His expert ability to understand and identify business needs, analyse data across multiple areas, and provide the executive team with the insights required for strategic decision-making is outstanding.
                 Kristian’s ability to collaborate across all levels of the organisation, present complex ideas clearly to executive team members, and proactively drive initiatives makes him a truly invaluable asset.
                 He doesn’t just respond to business needs—he anticipates them, delivering innovative solutions that leaders didn’t even know they needed.
                 His deep understanding of technology and platforms, coupled with his continuous research into the latest advancements, has significantly benefited the business. 
                 Kristian’s contributions have not only driven efficiency and innovation but have also been recognised at a group level, with multiple awards for his pioneering work in AI and other transformative initiatives. 
                 His impact on my teams and the wider organisation has been immense, and I have no doubt that he will continue to excel in any endeavour he takes on.
-                </p>
-            </div>
+            </p>
+        </div>
 
-            <div class="reference-card">
-                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/SA2.jpg?raw=true" alt="Scott Andrew" class="reference-photo">
-                <p class="reference-name">Scott Andrew</p>
-                <p class="reference-title">Director - US IT Manufacturing Operations System</p>
-                <p class="reference-title">onsemi</p>
-                <div class="reference-divider"></div>
-                <p class="reference-text">
+        <div class="testimonial-card">
+            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/SA2.jpg?raw=true" alt="Scott Andrew" class="profile-image">
+            <p class="testimonial-name">Scott Andrew</p>
+            <p class="testimonial-title">Director - US IT Manufacturing Operations System</p>
+            <p class="testimonial-title">onsemi</p>
+            <div class="divider"></div>
+            <p class="testimonial-text">
+                <span class="quote-icon">❝</span>
                 I worked with Kristian while at ON Semiconductor. He lead a team that provided first-level support for our Camstar MES manufacturing sites globally, and he was the 2018 PwC audit point-of-contact for ATO CIM. 
                 I partnered very closely with him in both roles. He is an excellent communicator with great analytical and problem solving skills. 
                 He has always been someone that I could trust and depend on. And he was a consistent encouragement and example to all of those around him. 
-                His leadership, his support, and all of the other qualities highlighted above are already missed, but will surely be credited to his next role and employer.
-                </p>
-            </div>
+                His leadership, his support, and all of the other qualities highlighted above are already missed, but will surely be credited to his next role and employer. </p>
+        </div>
 
-            <div class="reference-card">
-                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/AC2.jpg?raw=true" alt="Dave Taylor" class="reference-photo">
-                <p class="reference-name">Anne Cordero</p>
-                <p class="reference-title">Philippines Country Manager - Human Resources</p>
-                <p class="reference-title">onsemi</p>
-                <div class="reference-divider"></div>
-                <p class="reference-text">
-                 Kristian started as a cadet engineer at ON Semiconductor Phils Inc. 
+         <div class="testimonial-card">
+            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/AC2.jpg?raw=true" alt="Scott Andrew" class="profile-image">
+            <p class="testimonial-name">Anne Cordero</p>
+            <p class="testimonial-title">Philippines Country Manager - Human Resources</p>
+            <p class="testimonial-title">onsemi</p>
+            <div class="divider"></div>
+            <p class="testimonial-text">
+                <span class="quote-icon">❝</span>
+                Kristian started as a cadet engineer at ON Semiconductor Phils Inc. 
                 After the 8 months training, he has shown exemplary performance, presented technical papers, performed above and beyond, led teams of engineers and has made his way up as a section manager. 
                 His inquisitiveness led to so much learning and he never rests on his laurels. His passion to learn never ceases. I am sure this young, passionate and dedicated engineer will be a CIO someday.
-                </p>
-            </div>
+            </p>
+         </div>
 
-            <div class="reference-card">
-                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/AM2.jpg?raw=true" alt="Dave Taylor" class="reference-photo">
-                <p class="reference-name">Aravind Mahalingam</p>
-                <p class="reference-title">Architect - Oracle HCM Cloud</p>
-                <p class="reference-title">EY</p>
-                <div class="reference-divider"></div>
-                <p class="reference-text">
+         <div class="testimonial-card">
+            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/AM2.jpg?raw=true" alt="Scott Andrew" class="profile-image">
+            <p class="testimonial-name">Aravind Mahalingam</p>
+            <p class="testimonial-title">Architect - Oracle HCM Cloud</p>
+            <p class="testimonial-title">EY</p>
+            <div class="divider"></div>
+            <p class="testimonial-text">
+                <span class="quote-icon">❝</span>
                 Kristian is a great professional and I am glad that we worked together in HCM Implementation. 
                 He was leading the entire HCM track from the business. His extensive system knowledge combined with HR process knowledge and his ability to adapt the global best practices helped in finalizing a robust HCM Solution. 
                 It was such a pleasure to work with an intelligent person like Kristian and am sure he is a C-Level executive in the making.
-                </p>
-            </div>
+               </p>
+         </div>
 
-            <div class="reference-card">
-                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/JH2.jpg?raw=true" alt="Dave Taylor" class="reference-photo">
-                <p class="reference-name">Joshua Hernandez</p>
-                <p class="reference-title">Team Lead - Quality Design Services</p>
-                <p class="reference-title">SunPower Corporation</p>
-                <div class="reference-divider"></div>
-                <p class="reference-text">
+        <div class="testimonial-card">
+            <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/AM2.jpg?raw=true" alt="Scott Andrew" class="profile-image">
+            <p class="testimonial-name">Joshua Hernandez</p>
+            <p class="testimonial-title">Team Lead - Quality Design Services</p>
+            <p class="testimonial-title">SunPower Corporation</p>
+            <div class="divider"></div>
+            <p class="testimonial-text">
+                <span class="quote-icon">❝</span>
                 Kristian was a Subject Matter Expert during his teaching stint in De La Salle University - Dasmarinas. I can attest to his effective communication style and robust knowledge of the subject he's teaching.
                 He was able to relay complicated theories into practical bites digestible to audiences of various intellectual capacities, and bridged the wide gap of theory and practice in the semiconductor industry. 
                 He was generous with his knowledge and time and understands that cascading it not only benefits him, but also future professionals. 
                 It will not come as a surprise if he becomes successful at anything he does.
                 </p>
-            </div>
-        </div>
+         </div> 
+
     </main>
 
-    <footer>
+    <footer id="contact">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:kristian.dimaranan8@gmail.com">kristian.dimaranan8@gmail.com</a></p>
-        <p>Phone: <a href="tel:+971551849734">+971 55 184 9734</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/kristian-dimaranan-8b137a84/" target="_blank">LinkedIn</a></p>
+        <div>
+            <p>Email: <a href="mailto:kristian.dimaranan8@gmail.com">kristian.dimaranan8@gmail.com</a></p>
+            <p>Phone: <a href="tel:+971551849734">+971 55 184 9734</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/kristian-dimaranan-8b137a84/" target="_blank">LinkedIn</a></p>
+        </div>
         <p>&copy; 2025 DataBrew. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
 
 
