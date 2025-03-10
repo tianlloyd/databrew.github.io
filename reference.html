@@ -18,7 +18,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background-color: #5A483C; 
+            background-color: #5A483C;
             padding: 10px 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -31,100 +31,154 @@
             margin: 0 auto;
         }
 
+        header span {
+            display: block;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #e6e0d0;
+        }
+
+        nav {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        nav a {
+            color: #e6e0d0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffda79;
+            border-bottom: 2px solid #ffda79;
+        }
+
         main {
             padding: 40px 20px;
-            max-width: 600px; /* Narrower layout */
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
+        main h2 {
+            font-size: 2.5rem;
+            color: #5A483C;
+            margin-bottom: 20px;
+        }
+
         .carousel-container {
             position: relative;
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
             overflow: hidden;
-            padding: 40px 20px;
-            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            padding: 20px;
         }
 
         .carousel {
             display: flex;
-            overflow: hidden;
+            transition: transform 0.5s ease-in-out;
         }
 
-        .testimonial-card {
+        .carousel-item {
             min-width: 100%;
             box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
-        .testimonial-photo {
-            width: 120px;
-            height: 120px;
+        .reference-photo {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            border: 4px solid #5A483C;
-            margin-bottom: 10px;
+            object-fit: cover;
+            border: 3px solid #5A483C;
         }
 
-        .testimonial-content {
-            background-color: #5A483C;
-            color: #e6e0d0;
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 10px;
+        .reference-details {
+            text-align: left;
         }
 
-        .testimonial-name {
-            font-weight: bold;
+        .reference-name {
             font-size: 1.2rem;
-            color: #ffda79;
+            font-weight: bold;
+            color: #5A483C;
+        }
+
+        .reference-text {
+            font-size: 1rem;
+            color: #333;
+            margin-top: 5px;
         }
 
         .scroll-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(75, 46, 42, 0.8);
+            background-color: rgba(90, 72, 60, 0.8);
             border: none;
             color: #fff;
             padding: 10px 15px;
             cursor: pointer;
             border-radius: 50%;
-            transition: background-color 0.3s ease;
+            font-size: 1.5rem;
+            transition: background-color 0.3s;
         }
 
-        .scroll-btn.left { left: 10px; }
-        .scroll-btn.right { right: 10px; }
+        .scroll-btn.left {
+            left: 10px;
+        }
+
+        .scroll-btn.right {
+            right: 10px;
+        }
 
         .scroll-btn:hover {
             background-color: #ffda79;
             color: #5A483C;
         }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #5A483C;
+            color: #e6e0d0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ffda79;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #e6e0d0;
+        }
+
+        footer h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const carousel = document.querySelector(".carousel");
-            const leftButton = document.querySelector(".scroll-btn.left");
-            const rightButton = document.querySelector(".scroll-btn.right");
-
-            let index = 0;
-
-            const moveCarousel = (direction) => {
-                const testimonials = document.querySelectorAll(".testimonial-card");
-                const totalTestimonials = testimonials.length;
-                index = (index + direction + totalTestimonials) % totalTestimonials;
-                const offset = -index * 100;
-                carousel.style.transform = `translateX(${offset}%)`;
-            };
-
-            leftButton.addEventListener("click", () => moveCarousel(-1));
-            rightButton.addEventListener("click", () => moveCarousel(1));
-        });
-    </script>
 </head>
 <body>
     <header>
         <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/DataBrewWhite.png?raw=true" alt="DataBrew Logo" class="logo">
+        <span>by Kristian Dimaranan</span>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -133,18 +187,18 @@
         </nav>
     </header>
 
-      <main>
+
+    <main>
         <h2>References and Recommendations</h2>
         <p>Here are some testimonials from colleagues and professionals I've worked with:</p>
 
-          <div class="carousel-container">
-            <button class="scroll-btn left" onclick="moveCarousel(-1)">&#10094;</button>
-            <div class="carousel" id="carousel">
-                <div class="carousel-item">
-                    <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/Scott.jpg?raw=true" alt="Person 1" class="reference-photo">
-                    <div class="reference-details">
-                        <p class="reference-name">Scott Andrew, Director - US IT Manufacturing Operations System</p>
-                        <p class="reference-text">
+         <div class="references-container">
+            <!-- Reference 1 -->
+            <div class="reference-card">
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/Scott.jpg?raw=true" alt="Person 1" class="reference-photo">
+                <div class="reference-details">
+                    <p class="reference-name">Scott Andrew, Director - US IT Manufacturing Operations System</p>
+                    <p class="reference-text">
                         I worked with Kristian while at ON Semiconductor. He lead a team that provided first-level support for our Camstar MES manufacturing sites globally, and he was the 2018 PwC audit point-of-contact for ATO CIM. 
                         I partnered very closely with him in both roles. He is an excellent communicator with great analytical and problem solving skills. 
                         He has always been someone that I could trust and depend on. And he was a consistent encouragement and example to all of those around him. 
@@ -154,11 +208,11 @@
             </div>
 
             <!-- Reference 2 -->
-             <div class="carousel-item">
-                    <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/Anne.jpg?raw=true" alt="Person 2" class="reference-photo">
-                    <div class="reference-details">
-                        <p class="reference-name">Anne Corder, Country Manager - HROD</p>
-                        <p class="reference-text">
+            <div class="reference-card">
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/Anne.jpg?raw=true" alt="Person 2" class="reference-photo">
+                <div class="reference-details">
+                    <p class="reference-name">Anne Corder, Country Manager - HROD</p>
+                    <p class="reference-text">
                         Kristian started as a cadet engineer at ON Semiconductor Phils Inc. 
                         After the 8 months training, he has shown exemplary performance, presented technical papers, performed above and beyond, led teams of engineers and has made his way up as a section manager. 
                         His inquisitiveness led to so much learning and he never rests on his laurels. His passion to learn never ceases. I am sure this young, passionate and dedicated engineer will be a CIO someday.
@@ -167,9 +221,9 @@
             </div>
 
             <!-- Reference 3 -->
-              <div class="carousel-item">
-                    <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/Aravind.jpg?raw=true" alt="Person 3" class="reference-photo">
-                    <div class="reference-details">
+            <div class="reference-card">
+                <img src="https://github.com/tianlloyd/databrew.github.io/blob/main/Reference/Aravind.jpg?raw=true" alt="Person 3" class="reference-photo">
+                <div class="reference-details">
                     <p class="reference-name">Aravind Mahalingam, Architect - Oracle HCM Cloud</p>
                     <p class="reference-text">
                         Kristian is a great professional and I am glad that we worked together in HCM Implementation. 
@@ -194,12 +248,22 @@
                 </div>
             </div>
         </div>-->
-            <button class="scroll-btn right">&#10095;</button>
-        </div>
     </main>
-</body>
-</html>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const carousel = document.getElementById('carousel');
+            const items = document.querySelectorAll('.carousel-item');
+            const totalItems = items.length;
+
+            currentIndex = (currentIndex + direction + totalItems) % totalItems;
+            const offset = currentIndex * -100;
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
     </script>
+
     <footer id="contact">
         <h2>Contact Me</h2>
         <div>
