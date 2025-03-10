@@ -18,7 +18,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background-color: #5A483C; 
+            background-color: #5A483C;
             padding: 10px 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -70,64 +70,80 @@
             margin-bottom: 20px;
         }
 
-        .references-container {
-            display: flex;
-            flex-direction: column;
-            gap: 25px; /* Ensures uniform spacing */
-        }
-
-        .reference-card {
-            background-color: #fff;
-            padding: 20px;
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center; /* Aligns text and image at the top */
-            text-align: left;
-            min-height: 120px; /* Adjusted to prevent inconsistent height */
-            gap: 20px; /* Space between image and text */
+            background-color: #fff;
+            padding: 20px;
+        }
 
-            
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .reference-photo {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #5A483C;
         }
 
         .reference-details {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            text-align: left;
         }
 
         .reference-name {
             font-size: 1.2rem;
             font-weight: bold;
             color: #5A483C;
-            margin-bottom: 5px;
         }
 
         .reference-text {
             font-size: 1rem;
             color: #333;
-            margin: 0; /* Removes extra bottom space */
+            margin-top: 5px;
         }
 
-        .linkedin-link {
-            font-size: 0.9rem;
-            color: #ffda79;
-            text-decoration: none;
-            font-weight: bold;
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(90, 72, 60, 0.8);
+            border: none;
+            color: #fff;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: background-color 0.3s;
         }
 
-        .linkedin-link:hover {
-            text-decoration: underline;
-            color: #e6e0d0;
+        .scroll-btn.left {
+            left: 10px;
+        }
+
+        .scroll-btn.right {
+            right: 10px;
+        }
+
+        .scroll-btn:hover {
+            background-color: #ffda79;
+            color: #5A483C;
         }
 
         footer {
@@ -170,6 +186,7 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
+
 
     <main>
         <h2>References and Recommendations</h2>
@@ -232,6 +249,20 @@
             </div>
         </div>-->
     </main>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const carousel = document.getElementById('carousel');
+            const items = document.querySelectorAll('.carousel-item');
+            const totalItems = items.length;
+
+            currentIndex = (currentIndex + direction + totalItems) % totalItems;
+            const offset = currentIndex * -100;
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
 
     <footer id="contact">
         <h2>Contact Me</h2>
