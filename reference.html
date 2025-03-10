@@ -60,55 +60,63 @@
             margin-bottom: 20px;
         }
 
-        .reference-card {
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            padding: 30px 20px;
-            margin-bottom: 30px;
-            text-align: left;
-        }
+       .reference-card {
+    background: linear-gradient(145deg, #fff7eb, #f5f0e8); /* Soft gradient */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out; /* Subtle hover animation */
+}
 
-        .reference-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid #5A483C;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto 15px; /* Center the photo */
-        }
+.reference-card:hover {
+    transform: translateY(-5px); /* Card lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+}
 
-        .reference-name {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #5A483C;
-            text-align: center;
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
+.reference-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #5A483C;
+    text-align: center;
+    margin-top: 10px;
+}
 
-        .reference-position {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #5A483C;
-            text-align: center;
-        }
+.reference-divider {
+    width: 60px;
+    height: 3px;
+    background-color: #ffda79; /* Golden accent */
+    margin: 5px auto 15px;
+}
 
-        .reference-company {
-            font-size: 1rem;
-            color: #7A6A5C;
-            text-align: center;
-            margin-bottom: 15px;
-        }
+.reference-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #5A483C;
+    object-fit: cover;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
 
-        .reference-text {
-            font-size: 1rem;
-            color: #333;
-            text-align: justify; /* Improved readability */
-            max-width: 700px;
-            margin: 0 auto; /* Keeps text properly aligned */
-        }
+.reference-text {
+    font-size: 1rem;
+    color: #333;
+    text-align: justify;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.reference-text::before {
+    content: "❝";  /* Quote icon */
+    font-size: 3rem;
+    color: #e6e0d0; 
+    position: absolute;
+    top: -30px;
+    left: -10px;
+    opacity: 0.5; /* Soft and subtle */
+}
 
         footer {
             text-align: center;
